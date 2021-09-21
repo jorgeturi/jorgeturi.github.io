@@ -3,14 +3,11 @@
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
-       <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.2.5/dist/components/sphere-collider.js"></script>
-    <script src="../dist/aframe-physics-system.js"></script>
-    <script src="components/force-pushable.js"></script>
+
 
   </head>
   <body>
-<a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" visible="">
+<a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" visible="" physics="debug: true">
       <a-box position="-2.80062 0.07817 -1.84483" rotation="0 45 0" color="#4CC3D9" material="shader: portal" geometry="" visible="" grabbable static-body></a-box>
       <a-sphere position="0 1.25 -3.60198" radius="1.25" color="#EF2D5E" material="shader: portal; side: double" geometry="primitive: circle; radius: 1; segments: 64" link="href: https:/google.com.ar; image: diodos.jpg; title: CLICKEAMEE; titleColor: #000000" animation__fo="" visible=""><a-entity text="color: white; align: center; font: kelsonsans; value: CLICKEAMEE; width: 4" position="0 1.5 0"></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; side: back" visible="false"></a-entity></a-sphere>
       <a-cylinder static-body position="0.23996 0.41559 -1.86769" radius="0.5" height="1.5" color="#FFC65D" material="color: #000000" geometry="" visible="" wasd-controls=""></a-cylinder>
