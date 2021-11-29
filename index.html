@@ -10,8 +10,11 @@
 
   </head>
   <body>
-   <a-scene
-    >
+   <a-scene background="color: #212"
+      webxr="referenceSpaceType: local"
+      environment
+      cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .raycastable"
+      info-message="htmlSrc: #messageText">
       <a-assets>
         <!--
           Image source: http://www.ghibli.jp/works/kazetachinu/#frame&gid=1&pid=1
