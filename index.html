@@ -12,11 +12,11 @@
    <a-scene background="color: #212" webxr="referenceSpaceType: local" environment="" cursor="rayOrigin: mouse" raycaster="objects: .raycastable; direction: -0.4144288906766018 0.20285203596275783 -0.8871864212657479; origin: 0 1.6 2; useWorldCoordinates: true" info-message="htmlSrc: #messageText" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" fog="color: #8e9191; far: 92; density: 0" visible="">
 <a-assets>
 
-<img id="kazetachinu" src="https://cdn.aframe.io/examples/ui/kazetachinu.jpg" crossorigin="anonymous">
-<img id="kazetachinuPoster" src="https://cdn.aframe.io/examples/ui/kazetachinuPoster.jpg" crossorigin="anonymous">
+<img id="kazetachinu" src="diodos.jpg" crossorigin="anonymous">
+<img id="kazetachinuPoster" src="diodos.jpg" crossorigin="anonymous">
 
-<img id="ponyo" src="https://cdn.aframe.io/examples/ui/ponyo.jpg" crossorigin="anonymous">
-<img id="ponyoPoster" src="https://cdn.aframe.io/examples/ui/ponyoPoster.jpg" crossorigin="anonymous">
+<img id="ponyo" src="" crossorigin="anonymous">
+<img id="ponyoPoster" src="diodos.jpg" crossorigin="anonymous">
 
 <img id="karigurashi" src="https://cdn.aframe.io/examples/ui/karigurashi.jpg" crossorigin="anonymous">
 <img id="karigurashiPoster" src="https://cdn.aframe.io/examples/ui/karigurashiPoster.jpg" crossorigin="anonymous">
@@ -37,13 +37,12 @@
 
 <a-entity id="menu" highlight="">
 <a-entity id="karigurashiButton" position="-0.8 0 0" mixin="frame" class="raycastable menu-button" geometry="" animation__scale="dur: 200; property: scale; startEvents: mouseenter; to: 1.2 1.2 1.2" animation__scale_reverse="dur: 200; property: scale; startEvents: mouseleave; to: 1 1 1">
-<a-entity material="src: [object HTMLImageElement]" mixin="poster" geometry=""></a-entity>
+<a-entity material="src: " mixin="poster" geometry=""></a-entity>
 </a-entity>
 <a-entity id="kazetachinuButton" position="" mixin="frame" class="raycastable menu-button" geometry="" animation__scale="dur: 200; property: scale; startEvents: mouseenter; to: 1.2 1.2 1.2" animation__scale_reverse="dur: 200; property: scale; startEvents: mouseleave; to: 1 1 1">
-<a-entity material="src: [object HTMLImageElement]" mixin="poster" geometry=""></a-entity>
+<a-entity material="src: " mixin="poster" geometry=""></a-entity>
 </a-entity>
 <a-entity id="ponyoButton" position="0.8 0 0" mixin="frame" class="raycastable menu-button" geometry="" animation__scale="dur: 200; property: scale; startEvents: mouseenter; to: 1.2 1.2 1.2" animation__scale_reverse="dur: 200; property: scale; startEvents: mouseleave; to: 1 1 1">
-<a-entity material="src: [object HTMLImageElement]" mixin="poster" geometry=""></a-entity>
 </a-entity>
 </a-entity>
 
@@ -51,8 +50,8 @@
 <a-entity id="ponyoMovieImage" mixin="movieImage" material="" visible="false" geometry=""></a-entity>
 <a-entity id="kazetachinuMovieImage" mixin="movieImage" material="" visible="false" geometry=""></a-entity>
 <a-entity id="karigurashiMovieImage" mixin="movieImage" material="" visible="false" geometry=""></a-entity>
-<a-entity id="movieTitle" position="-0.68 -0.1 0" text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)"></a-entity>
-<a-entity id="movieDescription" position="-0.68 -0.2 0" text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a-entity>
+<a-entity id="movieTitle" position="-0.68 -0.1 0" text="shader: msdf; anchor: left; width: 1.5;  color: white; value: Ponyo (2003)"></a-entity>
+<a-entity id="movieDescription" position="-0.68 -0.2 0" text="baseline: top; shader: msdf; anchor: left; color: white; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a-entity>
 </a-entity>
 </a-entity>
 <div class="a-loader-title" style="display: none;">Laser input UI</div><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #000000; intensity: 0.5722448147213711; groundColor: #454545" visible=""></a-entity><a-entity class="environment" position="-0.11 1 0.33" light="intensity: 0.5722448147213711; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: -0.10389385923870163 0.9444896294427422 0.31168157771610494" visible="" geometry=""></a-sky><a-entity id="stars"></a-entity><div class="a-info-message-container">ssdsads<button class="a-info-message-button" title="Information about this experience"></button></div></a-scene>
