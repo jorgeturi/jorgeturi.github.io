@@ -7,31 +7,113 @@
 
   </head>
   <body>
-  <a-scene environment="" cursor="rayOrigin: mouse" raycaster="far: 100; objects: [link]; direction: -0.5762182905601134 0.256309018869454 -0.7760658274078036; origin: 0 1.6 2; useWorldCoordinates: true" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" fog="color: #8e9191; far: 92; density: 0" visible="">
-	  
-	<a-assets>
-        <img id="previewDefault" src="images/spherical/default.jpg">
-        <img id="previewVolcano" src="images/spherical/volcano.jpg">
-        <img id="previewEgypt" src="images/spherical/egypt.jpg">
-        <img id="previewForest" src="images/spherical/forest.jpg">
-        <img id="previewArches" src="images/spherical/arches.jpg">
-        <img id="previewJapan" src="images/spherical/japan.jpg">
-	</a-assets>
+   <a-scene
+      background="color: #212"
+      webxr="referenceSpaceType: local"
+      environment
+      cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .raycastable"
+      info-message="htmlSrc: #messageText">
+      <a-assets>
+        <a-asset-item id="messageText" src="message.html"></a-asset-item>
+        <!--
+          Image source: http://www.ghibli.jp/works/kazetachinu/#frame&gid=1&pid=1
+          Image author: Studio Ghibli
+        -->
+        <img id="kazetachinu" src="https://cdn.aframe.io/examples/ui/kazetachinu.jpg" crossorigin="anonymous"/>
+        <img id="kazetachinuPoster" src="https://cdn.aframe.io/examples/ui/kazetachinuPoster.jpg" crossorigin="anonymous"/>
+        <!--
+          Image source: http://www.ghibli.jp/works/ponyo/#frame&gid=1&pid=36
+          Image author: Studio Ghibli
+        -->
+        <img id="ponyo" src="https://cdn.aframe.io/examples/ui/ponyo.jpg" crossorigin="anonymous"/>
+        <img id="ponyoPoster" src="https://cdn.aframe.io/examples/ui/ponyoPoster.jpg" crossorigin="anonymous"/>
+        <!--
+          Image source: http://www.ghibli.jp/works/karigurashi/#frame&gid=1&pid=32
+          Image author: Studio Ghibli
+        -->
+        <img id="karigurashi" src="https://cdn.aframe.io/examples/ui/karigurashi.jpg" crossorigin="anonymous"/>
+        <img id="karigurashiPoster" src="https://cdn.aframe.io/examples/ui/karigurashiPoster.jpg" crossorigin="anonymous"/>
+        <a-mixin
+          id="frame"
+          geometry="primitive: plane; width: 0.5783552; height: 0.8192"
+          material="color: white; shader: flat"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave"
+         ></a-mixin>
+         <a-mixin
+          id="poster"
+          geometry="primitive: plane; width: 0.544768; height: 0.786432"
+          material="color: white; shader: flat"
+          material="shader: flat"
+          position="0 0 0.005"
+         ></a-mixin>
+         <a-mixin
+          id="movieImage"
+          geometry="primitive: plane; width: 1.5; height: 0.81"
+          material="src: #ponyo; shader: flat; transparent: true"
+          position="0 0.495 0.002"
+         ></a-mixin>
+      </a-assets>
 
-<!-- note: raycast issue (link still active) after walking through portal -->
+      <a-entity
+        id="background"
+        position="0 0 0"
+        geometry="primitive: sphere; radius: 2.0"
+        material="color: red; side: back; shader: flat"
+        scale="0.001 0.001 0.001"
+        visible="false" class="raycastable">
+      </a-entity>
 
-<a-sphere id="origin" radius="0.25" position="" color="white" material="" geometry=""></a-sphere>
+      <a-entity
+        position="0 1.6 0"
+        camera look-controls="magicWindowTrackingEnabled: false; touchEnabled: false; mouseEnabled: false">
+        <a-entity
+          id="fadeBackground"
+          geometry="primitive: sphere; radius: 2.5"
+          material="color: black; side: back; shader: flat; transparent: true; opacity: 0.6" visible="false">
+        </a-entity>
+      </a-entity>
 
-<a-link position="-4 1.6 -4" rotation="0 40 0" href="portal-volcano.html" title="Volcano" image="#previewVolcano" geometry="primitive: circle; segments: 64" material="shader: portal; pano: https://stemkoski.github.io/A-Frame-Examples/images/spherical/volcano.jpg; side: double" link=""><a-entity text="color: white; align: center; font: kelsonsans; value: Volcano; width: 5" position="0 1.5 0" rotation=""></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
+      <!-- Hand controls -->
+      <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: .raycastable"></a-entity>
+      <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .raycastable" line="color: #118A7E"></a-entity>
 
-<a-link position="-2 1.6 -5" rotation="0 20 0" href="portal-egypt.html" title="Egypt" image="#previewEgypt" geometry="primitive: circle; segments: 64" material="shader: portal; pano: https://stemkoski.github.io/A-Frame-Examples/images/spherical/egypt.jpg; side: double" link=""><a-entity text="color: white; align: center; font: kelsonsans; value: Egypt; width: 5" position="0 1.5 0" rotation=""></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
+      <a-entity id="ui" position="0 1.6 -2.5">
+        <!-- Poster menu -->
+        <a-entity id="menu" highlight>
+          <a-entity id="karigurashiButton" position="-0.8 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #karigurashiPoster;" mixin="poster"></a-entity>
+          </a-entity>
 
-<a-link position="0 1.6 -6" href="portal-forest.html" title="Forest" image="#previewForest" geometry="primitive: circle; segments: 64" material="shader: portal; pano: https://stemkoski.github.io/A-Frame-Examples/images/spherical/forest.jpg; side: double" link=""><a-entity text="color: white; align: center; font: kelsonsans; value: Forest; width: 5" position="0 1.5 0" rotation=""></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
+          <a-entity id="kazetachinuButton" position="0 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #kazetachinuPoster" mixin="poster"></a-entity>
+          </a-entity>
 
-<a-link position="2 1.6 -5" rotation="0 -20 0" href="portal-arches.html" title="Arches" image="#previewArches" geometry="primitive: circle; segments: 64" material="shader: portal; pano: https://stemkoski.github.io/A-Frame-Examples/images/spherical/arches.jpg; side: double" link=""><a-entity text="color: white; align: center; font: kelsonsans; value: Arches; width: 5" position="0 1.5 0" rotation=""></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
+          <a-entity id="ponyoButton" position="0.8 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #ponyoPoster" mixin="poster"></a-entity>
+          </a-entity>
+        </a-entity>
 
-<a-link position="4 1.6 -4" rotation="0 -40 0" href="portal-japan.html" title="Japan" image="#previewJapan" geometry="primitive: circle; segments: 64" material="shader: portal; pano: https://stemkoski.github.io/A-Frame-Examples/images/spherical/japan.jpg; side: double" link=""><a-entity text="color: white; align: center; font: kelsonsans; value: Japan; width: 5" position="0 1.5 0" rotation=""></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
-
-<div class="a-loader-title" style="display: none;">A-Frame: Link component</div><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.5722448147213711; groundColor: #454545" visible=""></a-entity><a-entity class="environment" position="-0.11 1 0.33" light="intensity: 0.5722448147213711; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: -0.10389385923870163 0.9444896294427422 0.31168157771610494" visible="" geometry=""></a-sky><a-entity id="stars"></a-entity></a-scene>
+        <!-- Info panel of the selected movie. -->
+        <a-entity
+          id="infoPanel"
+          position="0 0 0.5"
+          info-panel
+          visible="false"
+          scale="0.001 0.001 0.001"
+          geometry="primitive: plane; width: 1.5; height: 1.8"
+          material="color: #333333; shader: flat; transparent: false" class="raycastable">
+          <a-entity id="ponyoMovieImage" mixin="movieImage" material="src: #ponyo" visible="false"></a-entity>
+          <a-entity id="kazetachinuMovieImage" mixin="movieImage" material="src: #kazetachinu" visible="false"></a-entity>
+          <a-entity id="karigurashiMovieImage" mixin="movieImage" material="src: #karigurashi" visible="false"></a-entity>
+          <a-entity id="movieTitle"
+            position="-0.68 -0.1 0"
+            text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)"></a-entity>
+          <a-entity id="movieDescription"
+            position="-0.68 -0.2 0"
+            text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a-entity>
+        </a-entity>
+      </a-entity>
+    </a-scene>
   </body>
 </html>
