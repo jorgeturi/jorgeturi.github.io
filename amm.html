@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
+
+<html>
+ <!-- The debug:true option creates a wireframe around each physics body. If you don't see a wireframe,
+     the physics system may be unable to parse your model without a shape:box or shape:hull option. -->
+ <body>
+<a-scene physics="debug: true">
+
+  <!-- Camera -->
+  <a-entity camera look-controls></a-entity>
+
+  <!-- Floor -->
+  <a-plane static-body></a-plane>
+
+  <!-- Immovable box -->
+  <a-box static-body position="0 0.5 -5" width="3" height="1" depth="1"></a-box>
+
+  <!-- Dynamic box -->
+  <a-box dynamic-body position="5 0.5 0" width="1" height="1" depth="1"></a-box>
+ <!-- Box -->
+<a-entity obj-model="obj: url(...)" dynamic-body="shape: box; mass: 2"></a-entity>
+
+<!-- Cylinder -->
+<a-entity obj-model="obj: url(...)" dynamic-body="shape: cylinder; cylinderAxis: y; mass: 5"></a-entity>
+
+
+</a-scene>
+
+ </body>
+</html>
