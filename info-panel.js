@@ -10,20 +10,20 @@ AFRAME.registerComponent('info-panel', {
 
     this.movieInfo = {
       karigurashiButton: {
-        title: 'The Secret World of Arrietty (2010)',
+        title: 'ECOMAY',
         imgEl: document.querySelector('#karigurashiMovieImage'),
-        description: 'Based on the 1952 novel The Borrowers by Mary Norton, an English author of children\'s books, about a family of tiny people who live secretly in the walls and floors of a typical household, borrowing items from humans to survive.'
+        description: 'Tienda online - Pedidos al WhatsApp (modificado para enviar variaciones del producto y mensaje a medida)'
       },
       kazetachinuButton: {
-        title: 'The Wind Rises (2013)',
+        title: 'GOODPLAY',
         imgEl: document.querySelector('#kazetachinuMovieImage'),
         description: 'GoodPlay | Sitio diseñado a medida \n Detalles con Javascript (Tilt - Rellax - ) \n Optimizada - SEO general - \n link: '
 
       },
       ponyoButton: {
-        title: 'Ponyo (2003)',
+        title: 'MERCADO EN CASA',
         imgEl: document.querySelector('#ponyoMovieImage'),
-        description: 'It is the eighth film Miyazaki directed for Studio Ghibli, and his tenth overall. The film tells the story of Ponyo (Nara), a goldfish who escapes from the ocean and is rescued by a five-year-old human boy, Sosuke (Doi) after she is washed ashore while trapped in a glass jar.'
+        description: 'Tienda online'
       }
     };
 
