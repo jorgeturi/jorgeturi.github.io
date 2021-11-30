@@ -19,7 +19,7 @@ AFRAME.registerComponent('highlight', {
     evt.target.pause();
     evt.target.setAttribute('material', 'color', '#046de7');
     this.el.addState('clicked');
-    evt.target.object3D.scale.set(1.2, 1.2, 1.2);
+    evt.target.object3D.scale.set(2.8, 1.2, 1.2);
   },
 
   onMouseEnter: function (evt) {
