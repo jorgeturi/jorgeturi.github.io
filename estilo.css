@@ -1,14 +1,14 @@
 .color {
-	animation-duration: 3s !important;
-  	animation-name: mov !important;
-	animation-iteration-count: infinite !important;
-	animation-direction: alternate !important;
+	animation-duration: 3s ;
+  	animation-name: mov ;
+	animation-iteration-count: infinite ;
+	animation-direction: alternate ;
 }
 @keyframes mov {
   from {
-    background-color:#000 !important;
+    background-color:#000 ;
   }
   to {
-       background-color:#0078e8 !important;
+       background-color:#0078e8 ;
   }
 }
