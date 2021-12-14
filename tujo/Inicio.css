@@ -23,6 +23,8 @@
 .u-section-1 .u-image-1 {
   width: 313px;
   height: 313px;
+  background-image: url("images/tujo.png?rand=cbbd");
+  background-position: 50% 50%;
   margin: 94px auto 0;
 }
 
@@ -1603,6 +1605,240 @@
   .u-section-7 .u-text-1 {
     font-size: 1.5rem;
   }
+} .u-section-8 {
+  min-height: 822px;
+}
+
+.u-section-8 .u-image-1 {
+  height: 237px;
+  margin-top: 585px;
+  margin-bottom: 0;
+}
+
+.u-section-8 .u-layout-wrap-1 {
+  width: 1140px;
+  margin: -742px auto 0;
+}
+
+.u-section-8 .u-layout-cell-1 {
+  min-height: 324px;
+  background-image: none;
+}
+
+.u-section-8 .u-container-layout-1 {
+  padding: 30px;
+}
+
+.u-section-8 .u-text-1 {
+  text-transform: none;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 17px 0 0;
+}
+
+.u-section-8 .u-text-2 {
+  font-size: 1.25rem;
+  margin: 28px 0 0;
+}
+
+.u-section-8 .u-btn-1 {
+  padding: 0;
+}
+
+.u-section-8 .u-layout-cell-2 {
+  background-image: none;
+  min-height: 275px;
+}
+
+.u-section-8 .u-container-layout-2 {
+  padding: 30px;
+}
+
+.u-section-8 .u-text-3 {
+  text-transform: none;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 23px 0 0;
+}
+
+.u-section-8 .u-social-icons-1 {
+  white-space: nowrap;
+  height: 32px;
+  min-height: 16px;
+  width: 188px;
+  min-width: 124px;
+  margin: 23px auto 0 0;
+}
+
+.u-section-8 .u-icon-1 {
+  height: 100%;
+}
+
+.u-section-8 .u-icon-2 {
+  height: 100%;
+}
+
+.u-section-8 .u-icon-3 {
+  height: 100%;
+}
+
+.u-section-8 .u-icon-4 {
+  height: 100%;
+}
+
+.u-section-8 .u-text-4 {
+  font-size: 1.25rem;
+  margin: 32px 0 0;
+}
+
+.u-section-8 .u-layout-cell-3 {
+  min-height: 599px;
+  background-image: none;
+}
+
+.u-section-8 .u-container-layout-3 {
+  padding: 30px 20px;
+}
+
+.u-section-8 .u-form-1 {
+  height: 347px;
+  margin: 61px auto 0 0;
+}
+
+.u-section-8 .u-form-group-1 {
+  margin-left: 0;
+}
+
+.u-section-8 .u-input-1 {
+  font-size: 1.125rem;
+  text-transform: none;
+}
+
+.u-section-8 .u-input-2 {
+  font-size: 1.125rem;
+  text-transform: none;
+}
+
+.u-section-8 .u-input-3 {
+  font-size: 1.125rem;
+  text-transform: none;
+}
+
+.u-section-8 .u-input-4 {
+  font-size: 1.125rem;
+  text-transform: none;
+}
+
+.u-section-8 .u-btn-2 {
+  font-size: 1.125rem;
+  border-style: solid;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+@media (max-width: 1199px) {
+  .u-section-8 .u-layout-wrap-1 {
+    width: 940px;
+  }
+
+  .u-section-8 .u-layout-cell-1 {
+    min-height: 267px;
+  }
+
+  .u-section-8 .u-layout-cell-2 {
+    min-height: 227px;
+  }
+
+  .u-section-8 .u-social-icons-1 {
+    margin-right: NaNpx;
+  }
+
+  .u-section-8 .u-layout-cell-3 {
+    min-height: 494px;
+  }
+
+  .u-section-8 .u-form-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-8 .u-layout-wrap-1 {
+    width: 720px;
+  }
+
+  .u-section-8 .u-layout-cell-1 {
+    min-height: 100px;
+  }
+
+  .u-section-8 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+
+  .u-section-8 .u-layout-cell-3 {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+   .u-section-8 {
+    min-height: 1287px;
+  }
+
+  .u-section-8 .u-image-1 {
+    height: 317px;
+    margin-top: 970px;
+  }
+
+  .u-section-8 .u-layout-wrap-1 {
+    width: 540px;
+    margin-top: -1207px;
+    margin-bottom: 60px;
+  }
+
+  .u-section-8 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-8 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-8 .u-container-layout-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-8 {
+    min-height: 1247px;
+  }
+
+  .u-section-8 .u-image-1 {
+    margin-top: 930px;
+  }
+
+  .u-section-8 .u-layout-wrap-1 {
+    width: 340px;
+  }
+
+  .u-section-8 .u-text-1 {
+    font-size: 1.875rem;
+  }
+
+  .u-section-8 .u-layout-cell-2 {
+    min-height: 228px;
+  }
+
+  .u-section-8 .u-text-3 {
+    font-size: 1.875rem;
+    width: auto;
+  }
 }.flecha {
 	animation-duration: 3s;
   	animation-name: mov;
@@ -1615,3 +1851,34 @@
     margin-top: 0px;
   }
 }
+.efecto-tilt {
+    box-shadow: 0 20px 27px rgba(0, 0, 0, 0.55);
+    transform-style: preserve-3d;
+    margin: 50px auto;
+  
+}
+.efecto-tilt-logo {
+    width: 100px;
+  text-shadow: 1px 1px 2px black;
+    height: 100px;
+    background-color: #7e56ff;
+  position: relative;
+  top: 20%;
+    left: 50%;
+    background-image: linear-gradient(150deg, #5a00ff 0%, #ff1ff7 100%, #ff1ff7 100%);
+   transform: translateZ(50px) translateY(-50%) translateX(-50%);
+  
+   speed: 800;
+    glare: true;
+    maxGlare: 0.5;
+  
+}
+.efecto-tilt-logo-inner {
+    transform: translateZ(50px) translateY(-50%) translateX(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 1.9rem;
+    text-shadow: 1px 1px 2px black;
+speed: 100; 

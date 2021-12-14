@@ -23,7 +23,50 @@
 		]
 }</script>
     <meta name="theme-color" content="#167fe1">
-  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  
+
+<script src="https://unpkg.com/universal-tilt.js"></script>
+<script>
+const elems = document.querySelectorAll('.efecto-tilt');
+const tilt = UniversalTilt.init({
+elements: elems
+});
+</script>
+
+<script>
+jQuery(document).ready(function( $ ){
+  
+  
+   $('.efecto-tilt').tilt({
+    perspective: 500,
+    scale: 1,
+    speed: 200,
+    glare: true,
+    maxGlare: .5,
+     
+  });
+  
+  
+});
+</script>
+<script>
+jQuery(document).ready( function() {
+  
+  var rellax = new Rellax('.rellax', {
+    speed: -2,
+    center: true,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+  });
+
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+
+</head>
   <body class="u-body"><header class="u-align-center-xs u-border-1 u-border-grey-25 u-clearfix u-grey-90 u-header u-header" id="sec-246e"><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-left u-menu u-menu-dropdown u-nav-spacing-25 u-offcanvas u-menu-1" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -131,16 +174,5 @@
           </a>
         </div>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
   
 </body></html>
