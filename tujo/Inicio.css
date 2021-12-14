@@ -17,7 +17,7 @@
 }
 
 .u-section-1 .u-container-layout-1 {
-  padding: 40px 25px;
+  padding: 0 25px 40px;
 }
 
 .u-section-1 .u-image-1 {
@@ -25,7 +25,7 @@
   height: 313px;
   background-image: url("images/tujo.png?rand=cbbd");
   background-position: 50% 50%;
-  margin: 94px auto 0;
+  margin: 134px auto 0;
 }
 
 .u-section-1 .u-image-2 {
@@ -35,7 +35,7 @@
 }
 
 .u-section-1 .u-container-layout-2 {
-  padding: 30px 0 30px 40px;
+  padding: 0 0 30px 40px;
 }
 
 @media (max-width: 1199px) {
@@ -62,7 +62,6 @@
   }
 
   .u-section-1 .u-container-layout-1 {
-    padding-top: 30px;
     padding-bottom: 30px;
   }
 
@@ -444,7 +443,6 @@
   .u-section-2 .u-list-1 {
     margin-top: 20px;
     height: auto;
-    margin-bottom: initial;
     margin-right: initial;
     margin-left: initial;
   }
@@ -493,7 +491,6 @@
 
   .u-section-2 .u-list-1 {
     margin-top: 84px;
-    margin-bottom: 0;
     margin-right: initial;
     margin-left: initial;
   }
@@ -1567,6 +1564,10 @@
   }
 }
 
+.u-section-6 .u-list-item-1 {
+  opacity: 0.85;
+}
+
 .u-section-6 .u-list-item-1,
 .u-section-6 .u-list-item-1:before {
   transition-property: fill, color, background-color, stroke-width, border-style, border-width, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, background-size, background-position;
@@ -1574,6 +1575,14 @@
 
 .u-section-6 .u-list-item-1.u-list-item-1.u-list-item-1:hover {
   transform: scale(0.9) !important;
+}
+
+.u-section-6 .u-container-layout:hover .u-list-item-1 {
+  opacity: 1 !important;
+}
+
+.u-section-6 .u-list-item-3 {
+  opacity: 0.85;
 }
 
 .u-section-6 .u-list-item-3,
@@ -1585,6 +1594,14 @@
   transform: scale(0.9) !important;
 }
 
+.u-section-6 .u-container-layout:hover .u-list-item-3 {
+  opacity: 1 !important;
+}
+
+.u-section-6 .u-list-item-2 {
+  opacity: 0.85;
+}
+
 .u-section-6 .u-list-item-2,
 .u-section-6 .u-list-item-2:before {
   transition-property: fill, color, background-color, stroke-width, border-style, border-width, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, background-size, background-position;
@@ -1592,16 +1609,22 @@
 
 .u-section-6 .u-list-item-2.u-list-item-2.u-list-item-2:hover {
   transform: scale(0.9) !important;
-}.flecha {
+}
+
+.u-section-6 .u-container-layout:hover .u-list-item-2 {
+  opacity: 1 !important;
+}.color {
 	animation-duration: 3s;
   	animation-name: mov;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 @keyframes mov {
   from {
-    margin-top: 10px;
+    background-color:black;
   }
   to {
-    margin-top: 0px;
+       background-color:#0078e8;
   }
 }
 .efecto-tilt {
