@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/er.jpg?rand=bfdc");
+  background-image: url("images/er.jpg");
   background-position: 50% 50%;
   min-height: 691px;
 }
@@ -50,7 +50,7 @@
 
 .u-section-1 .u-image-1 {
   min-height: 691px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/5b67e4d4925ce854008350a4a748d14b0b1b06f67237a3f0a3c810df27ecd61e031c2065a8a039bb377bbb02fa39842afb6466c49f07652176af87_1280.png?rand=87b2");
+  background-image: url("images/5b67e4d4925ce854008350a4a748d14b0b1b06f67237a3f0a3c810df27ecd61e031c2065a8a039bb377bbb02fa39842afb6466c49f07652176af87_1280.png");
   background-position: 50% 50%;
 }
 
@@ -181,8 +181,8 @@
     min-height: 364px;
   }
 } .u-section-2 {
-  background-image: none;
-  min-height: 1004px;
+  background-image: url("images/default-image.jpg");
+  min-height: 1213px;
 }
 
 .u-section-2 .u-shape-1 {
@@ -194,50 +194,49 @@
 
 .u-section-2 .u-group-1 {
   width: 535px;
-  min-height: 836px;
-  margin: -553px calc(((100% - 1140px) / 2)) 0 auto;
+  min-height: 840px;
+  margin: -553px calc(((100% - 1140px) / 2)) 60px auto;
 }
 
 .u-section-2 .u-container-layout-1 {
-  padding: 30px 45px 30px 60px;
+  padding: 24px 0;
+}
+
+.u-section-2 .u-shape-2 {
+  width: 476px;
+  height: 243px;
+  box-shadow: 2px 0 0 0 rgba(0,0,0,0);
+  margin: 115px auto 0 0;
 }
 
 .u-section-2 .u-text-1 {
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  line-height: 1;
-  font-weight: 400;
-  margin: 0;
+  font-weight: 700;
+  font-size: 3.75rem;
+  margin: -160px 45px 0;
 }
 
 .u-section-2 .u-text-2 {
-  font-weight: 700;
-  font-size: 3.75rem;
-  margin: 12px 0 0;
+  margin: 28px 45px 0;
 }
 
 .u-section-2 .u-text-3 {
-  margin: 28px 0 0;
+  text-align: left;
+  margin: 20px 45px 0;
 }
 
 .u-section-2 .u-btn-1 {
-  border-style: none none solid;
-  padding: 0;
-}
-
-.u-section-2 .u-btn-2 {
   letter-spacing: 3px;
   font-size: 1.25rem;
   border-style: none;
   text-transform: uppercase;
   font-weight: 400;
   background-image: none;
-  margin: 30px auto 0 0;
+  margin: 59px auto 0;
 }
 
 .u-section-2 .u-layout-wrap-1 {
   width: 605px;
-  margin: -836px auto 60px calc(((100% - 1140px) / 2));
+  margin: -840px auto 0 calc(((100% - 1140px) / 2));
 }
 
 .u-section-2 .u-layout-cell-1 {
@@ -281,6 +280,7 @@
   height: 75px;
   width: 75px;
   background-image: none;
+  color: rgb(255, 255, 255) !important;
   margin: 0 auto 0 0;
 }
 
@@ -352,6 +352,7 @@
   height: 75px;
   width: 75px;
   background-image: none;
+  color: rgb(255, 255, 255) !important;
   margin: 0 auto 0 0;
 }
 
@@ -372,7 +373,6 @@
   }
 
   .u-section-2 .u-group-1 {
-    width: 441px;
     margin-right: calc(((100% - 940px) / 2));
   }
 
@@ -380,37 +380,42 @@
     padding-left: 45px;
   }
 
+  .u-section-2 .u-shape-2 {
+    color: rgb(0, 0, 0) !important;
+    margin-top: 90px;
+    transition-duration: 0.5s;
+  }
+
+  .u-section-2 .u-text-1 {
+    margin-top: -110px;
+  }
+
   .u-section-2 .u-layout-wrap-1 {
-    width: 499px;
     margin-left: calc(((100% - 940px) / 2));
   }
 }
 
 @media (max-width: 991px) {
    .u-section-2 {
-    min-height: 1334px;
+    min-height: 651px;
   }
 
   .u-section-2 .u-shape-1 {
     width: calc(((100% - 720px) / 2) + 390px);
-    margin-top: 251px;
   }
 
   .u-section-2 .u-group-1 {
-    width: 720px;
-    min-height: 301px;
-    margin-top: 270px;
-    margin-right: auto;
+    margin-right: calc(((100% - 720px) / 2));
   }
 
   .u-section-2 .u-container-layout-1 {
-    padding: 1px 30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 0;
   }
 
   .u-section-2 .u-layout-wrap-1 {
-    width: 720px;
-    margin-top: -1124px;
-    margin-left: auto;
+    margin-left: calc(((100% - 720px) / 2));
   }
 
   .u-section-2 .u-layout-cell-1 {
@@ -432,28 +437,20 @@
 
 @media (max-width: 767px) {
    .u-section-2 {
-    min-height: 1828px;
+    min-height: 1119px;
   }
 
   .u-section-2 .u-shape-1 {
     width: calc(((100% - 540px) / 2) + 390px);
-    margin-top: 161px;
   }
 
   .u-section-2 .u-group-1 {
-    width: 540px;
-    min-height: 391px;
-    margin-top: 743px;
-  }
-
-  .u-section-2 .u-container-layout-1 {
-    padding-right: 10px;
-    padding-left: 10px;
+    margin-right: calc(((100% - 540px) / 2));
   }
 
   .u-section-2 .u-layout-wrap-1 {
     width: 540px;
-    margin-top: -1598px;
+    margin-left: calc(((100% - 540px) / 2));
   }
 
   .u-section-2 .u-text-4 {
@@ -494,27 +491,43 @@
 
 @media (max-width: 575px) {
    .u-section-2 {
-    min-height: 2004px;
+    min-height: 981px;
   }
 
   .u-section-2 .u-shape-1 {
     width: calc(((100% - 340px) / 2) + 340px);
-    margin-right: 50px;
-    margin-left: auto;
   }
 
   .u-section-2 .u-group-1 {
     width: 340px;
-    margin-top: 879px;
+    margin-right: calc(((100% - 340px) / 2));
+  }
+
+  .u-section-2 .u-shape-2 {
+    width: 340px;
+    margin-top: 36px;
+  }
+
+  .u-section-2 .u-text-1 {
+    font-size: 2.25rem;
+    margin-top: -56px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .u-section-2 .u-text-2 {
-    font-size: 2.25rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-2 .u-text-3 {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .u-section-2 .u-layout-wrap-1 {
     width: 340px;
-    margin-top: -1734px;
+    margin-left: calc(((100% - 340px) / 2));
   }
 
   .u-section-2 .u-container-layout-2 {
@@ -614,7 +627,7 @@
 
 .u-section-3 .u-image-1 {
   min-height: 630px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/-min1.jpg?rand=7eeb");
+  background-image: url("images/-min1.jpg");
   background-position: 50% 50%;
 }
 
@@ -769,7 +782,7 @@
 
 .u-section-4 .u-image-1 {
   min-height: 559px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/orange-elegant-corporate-card_1435-1220.jpg?rand=ad40");
+  background-image: url("images/orange-elegant-corporate-card_1435-1220.jpg");
   background-position: 50% 50%;
 }
 
@@ -976,7 +989,7 @@
 .u-section-5 .u-image-1 {
   width: 229px;
   height: 229px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/5.jpg?rand=6029");
+  background-image: url("images/5.jpg");
   background-position: 50% 50%;
   margin: 0 auto 0 0;
 }
@@ -1040,7 +1053,7 @@
 .u-section-5 .u-image-2 {
   width: 229px;
   height: 229px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/7.jpg?rand=a426");
+  background-image: url("images/7.jpg");
   background-position: 50% 50%;
   margin: 0 auto 0 0;
 }
@@ -1104,7 +1117,7 @@
 .u-section-5 .u-image-3 {
   width: 229px;
   height: 229px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/4.jpg?rand=6840");
+  background-image: url("images/4.jpg");
   background-position: 50% 50%;
   margin: 0 auto 0 0;
 }
@@ -1168,7 +1181,7 @@
 .u-section-5 .u-image-4 {
   width: 229px;
   height: 229px;
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/zzz.jpg?rand=8f09");
+  background-image: url("images/zzz.jpg");
   background-position: 50% 50%;
   margin: 0 auto 0 0;
 }
@@ -1610,7 +1623,7 @@
     margin-left: auto;
   }
 } .u-section-6 {
-  background-image: url("np://user.desktop.nicepage.com/Site_212419122/images/-min.jpg?rand=d9ff");
+  background-image: url("images/-min.jpg");
   background-position: 50% 50%;
 }
 
