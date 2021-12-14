@@ -1109,6 +1109,7 @@
 }
 
 .u-section-5 .u-text-1 {
+  font-size: 3.75rem;
   margin: 57px auto 0 0;
 }
 
@@ -1437,8 +1438,15 @@
     min-height: 50vw;
   }
 
+  .u-section-5 .u-text-1 {
+    width: auto;
+    font-size: 3rem;
+    margin-top: 73px;
+    margin-right: 0;
+  }
+
   .u-section-5 .u-slider-1 {
-    margin-top: 0;
+    margin-top: -94px;
     min-height: 575px;
   }
 
@@ -1794,53 +1802,4 @@
 
 .u-section-6 .u-container-layout:hover .u-list-item-3 {
   opacity: 1 !important;
-}.color {
-	animation-duration: 3s;
-  	animation-name: mov;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-@keyframes mov {
-  from {
-    background-color:black;
-  }
-  to {
-       background-color:#0078e8;
-  }
-}
-.efecto-tilt {
-    box-shadow: 0 20px 27px rgba(0, 0, 0, 0.55);
-    transform-style: preserve-3d;
-    margin: 50px auto;
-  
-}
-.efecto-tilt-logo {
-    width: 100px;
-  text-shadow: 1px 1px 2px black;
-    height: 100px;
-    background-color: #7e56ff;
-  position: relative;
-  top: 20%;
-    left: 50%;
-    background-image: linear-gradient(150deg, #5a00ff 0%, #ff1ff7 100%, #ff1ff7 100%);
-   transform: translateZ(50px) translateY(-50%) translateX(-50%);
-  
-   speed: 800;
-    glare: true;
-    maxGlare: 0.5;
-  
-}
-.efecto-tilt-logo-inner {
-    transform: translateZ(50px) translateY(-50%) translateX(-50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: white;
-    font-size: 1.9rem;
-    text-shadow: 1px 1px 2px black;
-speed: 100;
-  
-  
-.fondo {
-	background:fixed;
 }
