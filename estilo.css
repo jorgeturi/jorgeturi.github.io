@@ -49,3 +49,7 @@ speed: 100;
 .fondo {
 	background:fixed;
 }
+
+.u-container-layout .u-similar-container .u-valign-top .u-container-layout-2:hover{
+ transform: scale(0.9);
+}
