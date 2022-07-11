@@ -839,6 +839,16 @@ section {
   background: #fff;
 
 }
+@media (max-width: 700px) {
+  .services .icon-box {
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  text-align: center;
+  transition: all ease-in-out 0.4s;
+  background: #fff;
+  min-width: 100%;
+}
+}
 
 .services .icon-box .icon {
 
