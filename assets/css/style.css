@@ -451,6 +451,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   #hero .hero-img img {
     width: 50%;
+      animation: up-down 2s ease-in-out infinite alternate-reverse both;
+
   }
 }
 
@@ -466,6 +468,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   #hero .hero-img img {
     width: 70%;
+      animation: up-down 2s ease-in-out infinite alternate-reverse both;
+
   }
 }
 
@@ -833,6 +837,7 @@ section {
   text-align: center;
   transition: all ease-in-out 0.4s;
   background: #fff;
+
 }
 
 .services .icon-box .icon {
@@ -840,6 +845,7 @@ section {
   align-content: center;
 text-align: center;
   margin-bottom: 10px;
+  text-align: -webkit-center;
 }
 
 .services .icon-box .icon i {
