@@ -1293,6 +1293,8 @@ text-align: center;
 @media (max-width: 992px) {
   .pricing .box {
     max-width: 60%;
+            min-width: 60%!important;
+
     margin: 0 auto 30px auto;
   }
 }
@@ -1300,6 +1302,8 @@ text-align: center;
 @media (max-width: 767px) {
   .pricing .box {
     max-width: 80%;
+        min-width: 80% !important;
+
     margin: 0 auto 30px auto;
   }
 }
@@ -1307,6 +1311,8 @@ text-align: center;
 @media (max-width: 420px) {
   .pricing .box {
     max-width: 100%;
+            min-width: 100%!important;
+
     margin: 0 auto 30px auto;
   }
 }
