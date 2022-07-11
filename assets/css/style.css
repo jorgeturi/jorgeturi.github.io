@@ -397,10 +397,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
-  display: inline-block;
+  display: flex;
   padding: 10px 28px 11px 28px;
   border-radius: 50px;
-  transition: 0.5s;
+  transition: 1.5s;
   margin: 10px 0 0 0;
   color: #fff;
   background: #47b2e4;
@@ -408,6 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .btn-get-started:hover {
   background: #209dd8;
+  font-size: 10px !important;
 }
 
 #hero .btn-watch-video {
@@ -471,6 +472,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 575px) {
   #hero .hero-img img {
     width: 80%;
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
   }
   #hero .btn-get-started {
     font-size: 16px;
