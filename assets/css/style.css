@@ -505,6 +505,17 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
+@media (max-width: 575px) {
+.filtro_tam{
+  font-size: 5px !important;
+  background-color: black;
+
+}
+}
+
+
+
+
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -963,6 +974,21 @@ text-align: center;
   padding: 8px 20px;
   border-radius: 50px;
   font-family: "Poppins", sans-serif;
+}
+@media (max-width: 575px) {
+ .portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px 5px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  color: #444444;
+  transition: all 0.3s;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+}
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
