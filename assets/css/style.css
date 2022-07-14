@@ -989,6 +989,10 @@ text-align: center;
   border-radius: 50px;
   font-family: "Poppins", sans-serif;
 }
+
+#mapa{
+  max-width: 100%;
+}
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
