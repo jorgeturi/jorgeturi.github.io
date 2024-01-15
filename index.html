@@ -632,6 +632,15 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.oncontextmenu = function(){return false}
+
+    window.onload = function()
+// Para internet Explorer
+{document.onselectstart = function(){return false;} 
+// Para Firefox
+document.onmousedown = function(){return false;}}
+    </script>
 </body>
 
 </html>
