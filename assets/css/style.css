@@ -27,6 +27,66 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Jost", sans-serif;
 }
 
+#blob{
+  -webkit-animation: blobanimacion 5s alternate-reverse infinite;
+  animation: blobanimacion 5s alternate-reverse infinite;
+}
+
+
+@-webkit-keyframes blobanimacion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes blobanimacion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+
+#tit1{
+  -webkit-animation: animaciontitulo 8s alternate-reverse infinite;
+  animation: animaciontitulo 8s alternate-reverse infinite;
+}
+#tit2{
+  -webkit-animation: animaciontitulo 11s alternate-reverse infinite;
+  animation: animaciontitulo 11s alternate-reverse infinite;
+}
+
+@-webkit-keyframes animaciontitulo {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes animaciontitulo {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 991px) {
+  #blob{
+    display: none;
+  }
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -73,6 +133,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(360deg);
   }
 }
+
 
 /*--------------------------------------------------------------
 # Back to top button
