@@ -24,6 +24,7 @@
   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -34,24 +35,20 @@
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-
       <h1 class="logo me-auto"><a href="index.html">TuJo</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+  
+      <nav id="navbar" class="navbar-custom">
         <ul>
-          <li><a class="nav-link   scrollto active" href="#caracteristicas">Caracteristicas</a></li>
-          <li><a class="nav-link scrollto" href="#documentacion">Documentacion</a></li>
-          <li><a class="nav-link getstarted scrollto" href="#descargar">Descargar</a></li>
+          <li><a class="nav-link-custom scrollto active" href="#caracteristicas">Características</a></li>
+          <li><a class="nav-link-custom scrollto" href="#documentacion">Documentación</a></li>
+          <li><a class="nav-link-custom btn-download scrollto" href="#descargar">Descargar</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+        <i class="bi bi-list mobile-nav-toggle-custom"></i> <!-- Icono de hamburguesa -->
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -581,5 +578,145 @@
 document.onmousedown = function(){return false;}}
     </script>
 </body>
+
+
+
+<style>
+/* Estilo para el menú de escritorio */
+.navbar-custom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-custom li {
+  margin: 0 15px;
+}
+
+.nav-link-custom {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-link-custom:hover {
+  color: #47b2e4; /* Celeste */
+}
+
+/* Estilo para el botón "Descargar" */
+.btn-download {
+  background-color: #47b2e4; /* Celeste */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-download:hover {
+  background-color: #35a2c2; /* Celeste más oscuro */
+}
+
+/* Estilo para el menú móvil */
+.mobile-nav-toggle-custom {
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+}
+
+@media (max-width: 991px) {
+  .navbar-custom ul {
+    display: none; /* Ocultar el menú en móvil */
+  }
+
+  .mobile-nav-toggle-custom {
+    display: block; /* Mostrar hamburguesa en móvil */
+  }
+}
+
+.navbar-mobile-custom {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(40, 58, 90, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile-custom .mobile-nav-toggle-custom {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile-custom ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile-custom a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #37517e;
+}
+
+.navbar-mobile-custom a:hover, .navbar-mobile-custom .active, .navbar-mobile-custom li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar-mobile-custom .getstarted {
+  margin: 15px;
+  color: #37517e;
+}
+
+.navbar-mobile-custom .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile-custom .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile-custom .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile-custom .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile-custom .dropdown ul a:hover, .navbar-mobile-custom .dropdown ul .active:hover, .navbar-mobile-custom .dropdown ul li:hover > a {
+  color: #47b2e4;
+}
+
+.navbar-mobile-custom .dropdown > .dropdown-active {
+  display: block;
+}
+
+
+</style>
+
 
 </html>
