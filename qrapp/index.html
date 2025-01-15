@@ -48,6 +48,15 @@
         <i class="bi bi-list mobile-nav-toggle-custom"></i> <!-- Icono de hamburguesa -->
       </nav>
     </div>
+  
+    <!-- Contenedor de menú móvil -->
+    <div class="navbar-mobile">
+      <ul>
+        <li><a class="nav-link-custom scrollto" href="#caracteristicas">Características</a></li>
+        <li><a class="nav-link-custom scrollto" href="#documentacion">Documentación</a></li>
+        <li><a class="nav-link-custom btn-download scrollto" href="#descargar">Descargar</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- ======= Hero Section ======= -->
@@ -578,26 +587,53 @@
 document.onmousedown = function(){return false;}}
 
 
-document.querySelector('#mobile-nav-toggle').addEventListener('click', function() {
-  // Alternar la clase 'active' en el menú móvil y en el icono hamburguesa
-  document.querySelector('.navbar-mobile').classList.toggle('active');
+// Obtener los elementos
+const mobileMenu = document.querySelector('.navbar-mobile');
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle-custom');
+const menuLinks = document.querySelectorAll('.navbar-mobile a');
+
+// Abrir y cerrar el menú móvil
+mobileNavToggle.addEventListener('click', function() {
+  // Alternar la clase 'active' en el menú y en el icono hamburguesa
+  mobileMenu.classList.toggle('active');
   this.classList.toggle('active');
-  
-  // Si el menú está activo, ocultamos el logo
-  const logo = document.querySelector('#logo');
-  if (document.querySelector('.navbar-mobile').classList.contains('active')) {
-    logo.style.display = 'none';
+
+  // Cambiar el icono de la hamburguesa a cruz
+  if (this.classList.contains('active')) {
+    this.classList.remove('bi-list');
+    this.classList.add('bi-x'); // Cambia a la cruz
   } else {
-    logo.style.display = 'block';
+    this.classList.remove('bi-x');
+    this.classList.add('bi-list'); // Vuelve a la hamburguesa
   }
 });
+
+// Cerrar el menú cuando se haga clic en un enlace dentro del menú
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active'); // Cerrar el menú
+    mobileNavToggle.classList.remove('active'); // Cambiar el icono de vuelta a la hamburguesa
+    mobileNavToggle.classList.remove('bi-x');
+    mobileNavToggle.classList.add('bi-list');
+  });
+});
+
+// Cerrar el menú cuando se haga clic fuera del menú
+document.addEventListener('click', function(event) {
+  if (!mobileMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+    mobileMenu.classList.remove('active'); // Cerrar el menú
+    mobileNavToggle.classList.remove('active'); // Cambiar el icono de vuelta a la hamburguesa
+    mobileNavToggle.classList.remove('bi-x');
+    mobileNavToggle.classList.add('bi-list');
+  }
+});
+
     </script>
 </body>
 
-
-
 <style>
-/* Estilo para el menú de escritorio */
+
+ /* Estilo para el menú de escritorio */
 .navbar-custom ul {
   list-style: none;
   padding: 0;
@@ -638,26 +674,36 @@ document.querySelector('#mobile-nav-toggle').addEventListener('click', function(
   color: white;
   font-size: 28px;
   cursor: pointer;
-  display: none; /* Oculto por defecto */
-}
-
-/* Estilo para el icono hamburguesa */
-.mobile-nav-toggle {
-  color: #fff;
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
+  display: none; /* Oculto por defecto en pantallas grandes */
   line-height: 0;
   transition: 0.5s;
 }
 
-/* Mostrar el menú hamburguesa en dispositivos móviles */
+/* Mostrar el icono hamburguesa en pantallas pequeñas */
 @media (max-width: 991px) {
-  .mobile-nav-toggle {
-    display: block;
+  .mobile-nav-toggle-custom {
+    display: block; /* Mostrar icono hamburguesa */
   }
-  .navbar ul {
-    display: none;
+
+  /* Ocultar el menú de navegación en pantallas pequeñas */
+  .navbar-custom ul {
+    display: none; /* Ocultar menú de navegación */
+  }
+
+  /* Mostrar el menú cuando está activo */
+  .navbar-mobile.active {
+    display: flex; /* Mostrar el menú móvil */
+  }
+
+  .navbar-mobile ul {
+    display: flex; /* Mostrar enlaces del menú móvil */
+    flex-direction: column; /* Alineación en columna */
+    align-items: center;
+    padding-top: 20px; /* Espacio superior */
+  }
+
+  .navbar-mobile ul li {
+    margin: 15px 0;
   }
 }
 
@@ -677,19 +723,7 @@ document.querySelector('#mobile-nav-toggle').addEventListener('click', function(
   padding-top: 0; /* Sin espacio extra en la parte superior */
 }
 
-/* Cuando el menú se activa */
-.navbar-mobile.active {
-  display: flex;
-}
-
 /* Estilo de los enlaces del menú móvil */
-.navbar-mobile ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  width: 100%;
-}
-
 .navbar-mobile ul li {
   margin: 15px 0;
 }
@@ -727,12 +761,10 @@ document.querySelector('#mobile-nav-toggle').addEventListener('click', function(
 }
 
 /* Cambiar el icono de la hamburguesa a cruz */
-.mobile-nav-toggle.active {
+.mobile-nav-toggle-custom.active {
   font-size: 32px;
   content: '\00d7'; /* Esto cambia el icono a una cruz */
 }
 
 </style>
-
-
 </html>
