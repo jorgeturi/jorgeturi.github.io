@@ -4,13 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Validator</title>
-  <!-- Agrega el archivo de Firebase JS SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-storage.js"></script>
-  
-  <!-- Asegúrate de cargar Firebase con la configuración de tu proyecto -->
+
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyDDwoPMT1AeemByzRwuXGE2qnPNYmW5Pmg",
@@ -21,8 +19,6 @@
       appId: "1:929827470228:web:03a6a7a934d4e19caa2d81",
       measurementId: "G-B3M3SP1SKF"
     };
-    
-    // Inicializa Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
 </head>
@@ -35,16 +31,15 @@
   </div>
 
   <script>
-    // Aquí es donde validarías el QR
+    // Función para validar el QR
     function validateQRCode(qrCode) {
-      // Conexión con Firestore para validar el QR
       const db = firebase.firestore();
-      const qrRef = db.collection('qrs').doc(qrCode);  // Suponiendo que el QR se almacena con su código como ID
-      
+      const qrRef = db.collection('qrs').doc(qrCode);  // Usando el ID del QR
+
       qrRef.get().then((doc) => {
         if (doc.exists) {
           const data = doc.data();
-          const expirationDate = new Date(data.fechaExpiracion.seconds * 1000);  // Asumimos que la fecha está en Firestore como timestamp
+          const expirationDate = new Date(data.fechaExpiracion.seconds * 1000);  // Convertimos el timestamp de Firestore
           const currentDate = new Date();
           
           if (expirationDate > currentDate) {
@@ -61,10 +56,12 @@
       });
     }
 
-    // Aquí simula la escaneada de un QR
-    // Este código se debe reemplazar con el lector de QR real que tengas en tu aplicación
+    // Simulación de escaneo del QR
     const scannedQRCode = 'google.com|2025-01-15T18:51:37.820210|gugul vencimiento|2025-01-15T18:49:37.820403|JyUgol0In9T6KyCWUKXDqSMPl4y1|2025-01-15T18:51:37.820210';
-    validateQRCode(scannedQRCode);
+    const qrParts = scannedQRCode.split('|');
+    const url = qrParts[0];  // Utilizando la URL del QR
+    validateQRCode(url);  // Pasamos la URL como ID al Firestore
   </script>
 </body>
 </html>
+
