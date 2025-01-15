@@ -576,6 +576,21 @@
 {document.onselectstart = function(){return false;} 
 // Para Firefox
 document.onmousedown = function(){return false;}}
+
+
+document.querySelector('#mobile-nav-toggle').addEventListener('click', function() {
+  // Alternar la clase 'active' en el menú móvil y en el icono hamburguesa
+  document.querySelector('.navbar-mobile').classList.toggle('active');
+  this.classList.toggle('active');
+  
+  // Si el menú está activo, ocultamos el logo
+  const logo = document.querySelector('#logo');
+  if (document.querySelector('.navbar-mobile').classList.contains('active')) {
+    logo.style.display = 'none';
+  } else {
+    logo.style.display = 'block';
+  }
+});
     </script>
 </body>
 
@@ -626,95 +641,96 @@ document.onmousedown = function(){return false;}}
   display: none; /* Oculto por defecto */
 }
 
-@media (max-width: 991px) {
-  .navbar-custom ul {
-    display: none; /* Ocultar el menú en móvil */
-  }
-
-  .mobile-nav-toggle-custom {
-    display: block; /* Mostrar hamburguesa en móvil */
-  }
-}
-
-.navbar-mobile-custom {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(40, 58, 90, 0.9);
-  transition: 0.3s;
-  z-index: 999;
-}
-
-.navbar-mobile-custom .mobile-nav-toggle-custom {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.navbar-mobile-custom ul {
-  display: block;
-  position: absolute;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
-  border-radius: 10px;
-  background-color: #fff;
-  overflow-y: auto;
-  transition: 0.3s;
-}
-
-.navbar-mobile-custom a {
-  padding: 10px 20px;
-  font-size: 15px;
-  color: #37517e;
-}
-
-.navbar-mobile-custom a:hover, .navbar-mobile-custom .active, .navbar-mobile-custom li:hover > a {
-  color: #47b2e4;
-}
-
-.navbar-mobile-custom .getstarted {
-  margin: 15px;
-  color: #37517e;
-}
-
-.navbar-mobile-custom .dropdown ul {
-  position: static;
+/* Estilo para el icono hamburguesa */
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
   display: none;
-  margin: 10px 20px;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  line-height: 0;
+  transition: 0.5s;
 }
 
-.navbar-mobile-custom .dropdown ul li {
-  min-width: 200px;
+/* Mostrar el menú hamburguesa en dispositivos móviles */
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
 }
 
-.navbar-mobile-custom .dropdown ul a {
+/* Menú móvil en pantalla completa */
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9); /* Fondo oscuro con opacidad */
+  z-index: 9999;
+  display: none; /* Menú oculto por defecto */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0; /* Sin espacio extra en la parte superior */
+}
+
+/* Cuando el menú se activa */
+.navbar-mobile.active {
+  display: flex;
+}
+
+/* Estilo de los enlaces del menú móvil */
+.navbar-mobile ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.navbar-mobile ul li {
+  margin: 15px 0;
+}
+
+.navbar-mobile a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
   padding: 10px 20px;
 }
 
-.navbar-mobile-custom .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar-mobile-custom .dropdown ul a:hover, .navbar-mobile-custom .dropdown ul .active:hover, .navbar-mobile-custom .dropdown ul li:hover > a {
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
   color: #47b2e4;
 }
 
-.navbar-mobile-custom .dropdown > .dropdown-active {
-  display: block;
+/* Estilo del botón destacado */
+.navbar-mobile .getstarted {
+  margin-top: 20px;
+  background-color: #47b2e4; /* Celeste Argentina */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
 }
 
+.navbar-mobile .getstarted:hover {
+  background-color: #1c8cba;
+}
+
+/* Ocultar el logo cuando se abre el menú */
+.navbar-mobile.active #logo {
+  display: none;
+}
+
+/* Cambiar el icono de la hamburguesa a cruz */
+.mobile-nav-toggle.active {
+  font-size: 32px;
+  content: '\00d7'; /* Esto cambia el icono a una cruz */
+}
 
 </style>
 
