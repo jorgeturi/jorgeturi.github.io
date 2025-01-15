@@ -52,6 +52,7 @@
     <!-- Contenedor de menú móvil -->
     <div class="navbar-mobile">
       <ul>
+        <li><a class="nav-link-custom scrollto close-btn" href="#X">X</a></li>
         <li><a class="nav-link-custom scrollto" href="#caracteristicas">Características</a></li>
         <li><a class="nav-link-custom scrollto" href="#documentacion">Documentación</a></li>
         <li><a class="nav-link-custom btn-download scrollto" href="#descargar">Descargar</a></li>
@@ -506,19 +507,17 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>TuJo</h3>
             <p>
-              Diseño y desarrollo web <br>
-              Tu sitio a medida<br>
-              Adaptado a tus necesidades <br><br>
-              <strong>Email:</strong> jorgeturina@tujo.com.ar<br>
+              Turina Jorge <br>
+              Trabajo final POO<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Inicio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#trabajos">Trabajos</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#servicios">Servicios</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#caracteristicas">Características</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#documentacion">Documentacion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#descargar">Descargar</a></li>
             </ul>
           </div>
 
@@ -658,7 +657,9 @@ document.addEventListener('click', function(event) {
 
 /* Estilo para el botón "Descargar" */
 .btn-download {
-  background-color: #47b2e4; /* Celeste */
+  border-style: solid;  
+  border-width: 2px; 
+  border-color: #47b2e4;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -725,25 +726,33 @@ document.addEventListener('click', function(event) {
 
 /* Estilo de los enlaces del menú móvil */
 .navbar-mobile ul li {
-  margin: 15px 0;
+  display: flex;
+  flex-direction: column; /* Los enlaces se alinean verticalmente */
+  justify-content: center; /* Alinear los enlaces verticalmente al centro */
+  align-items: center; /* Centrar los enlaces horizontalmente */
+  padding: 0;
+  margin: 0;
 }
 
 .navbar-mobile a {
   font-size: 20px;
-  color: #fff;
+  color: #1994cd;
   text-decoration: none;
   padding: 10px 20px;
+  text-align: center;
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #47b2e4;
+  color: #fff;
 }
 
 /* Estilo del botón destacado */
 .navbar-mobile .getstarted {
   margin-top: 20px;
-  background-color: #47b2e4; /* Celeste Argentina */
-  color: white;
+  
+  border-color: #47b2e4;
+  
+  text-decoration-color: white;
   padding: 12px 30px;
   border-radius: 5px;
   text-transform: uppercase;
@@ -765,6 +774,23 @@ document.addEventListener('click', function(event) {
   font-size: 32px;
   content: '\00d7'; /* Esto cambia el icono a una cruz */
 }
+.close-btn {
+  position: fixed;  /* Posicionamiento fijo respecto a la ventana */
+  top: 20px;        /* Espacio desde la parte superior */
+  right: 20px;      /* Espacio desde la parte derecha */
+  background-color: #47b2e4;  /* Fondo del botón */
+  color: white;     /* Color del texto */
+  padding: 10px 20px;  /* Espaciado dentro del botón */
+  border-radius: 50%;   /* Redondear el borde para simular un círculo */
+  font-size: 24px;  /* Tamaño de la letra */
+  cursor: pointer;  /* Cambiar el cursor al pasar sobre el botón */
+  transition: background-color 0.3s;  /* Transición suave al cambiar el fondo */
+  z-index: 10000;  /* Asegura que el botón esté por encima de otros elementos */
+}
 
+/* Efecto hover */
+.close-btn:hover {
+  background-color: #35a2c2;  /* Fondo más oscuro al pasar el ratón */
+}
 </style>
 </html>
