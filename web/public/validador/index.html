@@ -1,70 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Validator</title>
-  <!-- Agrega el archivo de Firebase JS SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-storage.js"></script>
+  <title>Validación de QR</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="config.js"></script> 
+  <script src="validateQR.js"></script> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
-  <!-- Asegúrate de cargar Firebase con la configuración de tu proyecto -->
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDDwoPMT1AeemByzRwuXGE2qnPNYmW5Pmg",
-      authDomain: "finalpoo-turinajorge.firebaseapp.com",
-      projectId: "finalpoo-turinajorge",
-      storageBucket: "finalpoo-turinajorge.appspot.com",
-      messagingSenderId: "929827470228",
-      appId: "1:929827470228:web:03a6a7a934d4e19caa2d81",
-      measurementId: "G-B3M3SP1SKF"
-    };
-    
-    // Inicializa Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>QR Code Validator</h1>
+  <h1>Validación de QR</h1>
+  <p id="status">Estado: Validando...</p>
+
   
-  <div id="qrResult">
-    <p>QR Code Scan Result:</p>
-    <p id="qrStatus">Scan a QR code to validate</p>
-  </div>
-
-  <script>
-    // Aquí es donde validarías el QR
-    function validateQRCode(qrCode) {
-      // Conexión con Firestore para validar el QR
-      const db = firebase.firestore();
-      const qrRef = db.collection('qrs').doc(qrCode);  // Suponiendo que el QR se almacena con su código como ID
-      
-      qrRef.get().then((doc) => {
-        if (doc.exists) {
-          const data = doc.data();
-          const expirationDate = new Date(data.fechaExpiracion.seconds * 1000);  // Asumimos que la fecha está en Firestore como timestamp
-          const currentDate = new Date();
-          
-          if (expirationDate > currentDate) {
-            document.getElementById('qrStatus').innerText = "QR is valid!";
-          } else {
-            document.getElementById('qrStatus').innerText = "QR has expired!";
-          }
-        } else {
-          document.getElementById('qrStatus').innerText = "QR not found!";
-        }
-      }).catch((error) => {
-        console.error("Error fetching document: ", error);
-        document.getElementById('qrStatus').innerText = "Error validating QR.";
-      });
-    }
-
-    // Aquí simula la escaneada de un QR
-    // Este código se debe reemplazar con el lector de QR real que tengas en tu aplicación
-    const scannedQRCode = 'google.com|2025-01-15T18:51:37.820210|gugul vencimiento|2025-01-15T18:49:37.820403|JyUgol0In9T6KyCWUKXDqSMPl4y1|2025-01-15T18:51:37.820210';
-    validateQRCode(scannedQRCode);
-  </script>
 </body>
 </html>
