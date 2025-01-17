@@ -29,25 +29,41 @@ async function validateQR() {
     }
 
     if (qrFound) {
+      const loadingContainer = document.getElementById("loading-container");
+      const spiner = document.getElementsByClassName("spinner")[0];
+
+      if (loadingContainer) {
+        spiner.style.display = "none";
+      }
       // Si el QR es dinámico, comprobamos su fecha de expiración
       if (qrData.fechaExpiracion) {
         const currentDate = new Date();
         const expirationDate = new Date(qrData.fechaExpiracion);
 
+
+
+
+
         if (currentDate < expirationDate) {
           qrValid = true;
           document.title = "QR Válido";
           document.getElementById("status").innerText = "Estado: QR Válido.";
+          loadingContainer.innerHTML = '<span class="icon">✓</span>';
+          loadingContainer.style.backgroundColor = "#28a745";
         } else {
           qrValid = false;
           document.title = "QR Expirado";
           document.getElementById("status").innerText = "Estado: QR Expirado.";
+          loadingContainer.innerHTML = '<span class="icon">✗</span>';
+          loadingContainer.style.backgroundColor = "#dc3545";
         }
       } else {
         // Si el QR es estático, no tiene fecha de expiración
         qrValid = true;
         document.title = "QR Válido";
         document.getElementById("status").innerText = "Estado: QR Válido.";
+        loadingContainer.innerHTML = '<span class="icon">✓</span>';
+        loadingContainer.style.backgroundColor = "#28a745";
       }
 
       // Solo mostrar el enlace si el QR es válido
@@ -65,7 +81,7 @@ async function validateQR() {
         const linkElement = document.createElement('a');
         linkElement.href = url;  // Asignar la nueva URL
         linkElement.target = "_blank";  // Abrir en una nueva pestaña
-        linkElement.innerText = "Ir a la nueva URL";  // Texto del enlace
+        linkElement.innerText = "Ir a la URL";  // Texto del enlace
         linkElement.classList.add("button-link");  // Asignar clase CSS
 
         // Añadir el enlace al div contenedor
@@ -89,3 +105,6 @@ async function validateQR() {
 
 // Llamar a la función de validación
 validateQR();
+
+
+
