@@ -125,24 +125,29 @@
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
                       <strong>Clases y Objetos:</strong><br>
-                      Cada archivo o componente como <code>AuthService</code>, <code>GenerateQRPage</code>, <code>LogPage</code>, etc., puede considerarse como una clase que encapsula comportamientos y propiedades relacionadas. Los objetos de estas clases son instanciados y utilizados a lo largo de la aplicación. Por ejemplo, la clase <code>AuthService</code> gestiona la autenticación con Firebase, mientras que <code>GenerateQRPage</code> se encarga de la creación de los QR.
+                      Cada archivo o componente como <code>AuthService</code>, <code>GenerateQRPage</code>, <code>LogPage</code>, <code>QRestatico</code>, <code>QRdinamico</code>, etc., se considera una clase con comportamientos y propiedades relacionadas. Por ejemplo, <code>AuthService</code> gestiona la autenticación con Firebase, y <code>GenerateQRPage</code> o <code>QRestatico</code> se encargan de la creación de los QRs.
                     </p>
                     <p>
                       <strong>Encapsulamiento:</strong><br>
-                      Las variables y métodos privados, como los controladores <code>TextEditingController</code> en las clases de las páginas (por ejemplo, <code>_controller</code> y <code>_controllertiempo</code>), están encapsulados dentro de las clases y no son accesibles directamente desde fuera. Esto ayuda a proteger la integridad de los datos y reduce la complejidad de la interacción con ellos.
+                      Las variables y métodos privados, como los controladores <code>TextEditingController</code>, están encapsulados dentro de las clases y no se pueden acceder directamente desde fuera. Esto asegura la integridad de los datos y simplifica la interacción.
                     </p>
                     <p>
                       <strong>Herencia:</strong><br>
-                      La herencia se utiliza en Flutter para extender clases como <code>StatefulWidget</code> y <code>StatelessWidget</code>. Por ejemplo, en las clases <code>GenerateQRPage</code> y <code>LogPage</code>, vemos que extienden de <code>StatefulWidget</code> o <code>StatelessWidget</code>, lo que permite comportamientos específicos de los widgets en Flutter. Esto posibilita que los widgets tengan características personalizadas mientras aprovechan las funcionalidades predeterminadas de las clases base.
+                      En Flutter, se utiliza herencia para extender clases como <code>StatefulWidget</code> y <code>StatelessWidget</code>. Las clases <code>GenerateQRPage</code> y <code>LogPage</code> extienden de estas clases base para personalizar comportamientos mientras aprovechan las funcionalidades predeterminadas.
+                      
+                      <strong>Ejemplo de funcionalidades predeterminadas:</strong><br>
+                      - **StatefulWidget** proporciona la capacidad de gestionar el estado de un widget de manera dinámica. Esto permite que los widgets actualicen su apariencia cuando cambian los datos que los afectan. Por ejemplo, en <code>GenerateQRPage</code>, se puede actualizar el QR cada vez que cambian los datos de entrada.
+                      - **StatelessWidget** es útil cuando el estado del widget no cambia después de su creación. Un ejemplo podría ser un componente visual estático, como un logo, que no requiere actualizarse una vez que se ha cargado. El uso de <code>StatelessWidget</code> en lugar de <code>StatefulWidget</code> permite que la aplicación sea más eficiente cuando no es necesario manejar estados dinámicos.
                     </p>
                     <p>
                       <strong>Polimorfismo:</strong><br>
-                      El polimorfismo se puede observar en los widgets de Flutter que tienen un método <code>build()</code> que devuelve un <code>Widget</code>. La implementación del método <code>build()</code> varía dependiendo de si el widget es <code>Stateful</code> o <code>Stateless</code>, pero todos comparten la misma firma de método. Esto permite que diferentes clases tengan comportamientos similares pero definidos de forma distinta.
+                      El polimorfismo se ve en los widgets de Flutter que implementan el método <code>build()</code>. Aunque cada widget (como <code>Stateful</code> o <code>Stateless</code>) tiene su propia versión del método, todos comparten la misma firma, lo que permite comportamientos similares con implementaciones distintas.
                     </p>
                     <p>
                       <strong>Abstracción:</strong><br>
-                      Las clases como <code>AuthService</code>, <code>QRStorage</code>, etc., proporcionan una abstracción sobre operaciones más complejas. Por ejemplo, <code>AuthService</code> abstrae las interacciones con Firebase para la autenticación, permitiendo que el resto de la aplicación se enfoque en la lógica de negocio sin preocuparse por los detalles internos de cómo Firebase maneja la autenticación.
+                      Las clases como <code>AuthService</code> y <code>QRStorage</code> proporcionan una abstracción de procesos complejos. Por ejemplo, <code>AuthService</code> maneja la autenticación con Firebase sin exponer la complejidad de sus operaciones internas al resto de la aplicación.
                     </p>
+                  
                   </div>
                 </li>
 

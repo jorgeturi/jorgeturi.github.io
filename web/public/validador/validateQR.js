@@ -28,13 +28,16 @@ async function validateQR() {
       }
     }
 
-    if (qrFound) {
-      const loadingContainer = document.getElementById("loading-container");
+
+    const loadingContainer = document.getElementById("loading-container");
       const spiner = document.getElementsByClassName("spinner")[0];
 
       if (loadingContainer) {
         spiner.style.display = "none";
       }
+
+    if (qrFound) {
+      
       // Si el QR es dinámico, comprobamos su fecha de expiración
       if (qrData.fechaExpiracion) {
         const currentDate = new Date();
@@ -94,6 +97,8 @@ async function validateQR() {
       // Si el QR no se encuentra
       document.title = "QR Inválido";
       document.getElementById("status").innerText = "Estado: QR no encontrado.";
+      loadingContainer.innerHTML = '<span class="icon">✗</span>';
+      loadingContainer.style.backgroundColor = "#dc3545";
     }
 
   } catch (error) {
