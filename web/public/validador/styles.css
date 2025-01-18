@@ -97,3 +97,16 @@ body {
   .error {
     color: #dc3545; /* Rojo para error */
   }
+
+
+  .ul {
+    max-width: 60%; /* Opcional: controla el ancho máximo de la lista */
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  .li {
+    word-wrap: break-word; /* Permite dividir palabras largas */
+    overflow-wrap: break-word;
+    margin-bottom: 10px; /* Añade espacio entre elementos */
+  }

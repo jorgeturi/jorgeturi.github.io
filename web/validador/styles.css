@@ -50,3 +50,63 @@ body {
     border-color: #4CAF50;           /* Borde verde */
     cursor: pointer;                 /* Cambiar el cursor a mano */
   }
+
+
+  #loading-container {
+    position: relative;
+    width: 100px;
+    border-radius: 50px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  /* Spinner animado */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Color de fondo del borde */
+    border-top: 5px solid #3498db; /* Color del borde animado */
+    border-radius: 50%; /* Hacerlo circular */
+    animation: spin 1s linear infinite; /* Animación de giro */
+    margin-bottom: 10px; /* Espacio entre el spinner y el texto */
+  }
+  
+  /* Animación del giro */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .icon {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .success {
+    color: #28a745; /* Verde para éxito */
+  }
+  
+  .error {
+    color: #dc3545; /* Rojo para error */
+  }
+
+
+  .ul {
+    max-width: 60%; /* Opcional: controla el ancho máximo de la lista */
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  .li {
+    word-wrap: break-word; /* Permite dividir palabras largas */
+    overflow-wrap: break-word;
+    margin-bottom: 10px; /* Añade espacio entre elementos */
+  }

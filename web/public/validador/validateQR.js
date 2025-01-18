@@ -2,7 +2,9 @@ async function validateQR() {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const scannedQR = params.get("qr");
+  const userEmail = params.get("email");  // Obtener el email de la URL
   console.log(`QR escaneado: ${scannedQR}`);
+  console.log(`Correo electrónico: ${userEmail}`);
 
   const db = firebase.firestore();
   const usersRef = db.collection("users");
@@ -11,15 +13,14 @@ async function validateQR() {
   let qrData = null;
 
   try {
-    // Recorremos todos los usuarios
     const userDocs = await usersRef.get();
+    let userId;
     for (const userDoc of userDocs.docs) {
-      const userId = userDoc.id;
+      userId = userDoc.id;
       const qrsRef = usersRef.doc(userId).collection("qrs");
       const qrDocs = await qrsRef.get();
       const qrList = qrDocs.docs.map(doc => doc.id);
 
-      // Comprobamos si el QR existe
       if (qrList.includes(scannedQR)) {
         const qrDoc = qrDocs.docs.find(doc => doc.id === scannedQR);
         qrData = qrDoc.data();
@@ -28,24 +29,17 @@ async function validateQR() {
       }
     }
 
-
     const loadingContainer = document.getElementById("loading-container");
-      const spiner = document.getElementsByClassName("spinner")[0];
+    const spiner = document.getElementsByClassName("spinner")[0];
 
-      if (loadingContainer) {
-        spiner.style.display = "none";
-      }
+    if (loadingContainer) {
+      spiner.style.display = "none";
+    }
 
     if (qrFound) {
-      
-      // Si el QR es dinámico, comprobamos su fecha de expiración
       if (qrData.fechaExpiracion) {
         const currentDate = new Date();
         const expirationDate = new Date(qrData.fechaExpiracion);
-
-
-
-
 
         if (currentDate < expirationDate) {
           qrValid = true;
@@ -61,7 +55,6 @@ async function validateQR() {
           loadingContainer.style.backgroundColor = "#dc3545";
         }
       } else {
-        // Si el QR es estático, no tiene fecha de expiración
         qrValid = true;
         document.title = "QR Válido";
         document.getElementById("status").innerText = "Estado: QR Válido.";
@@ -69,32 +62,121 @@ async function validateQR() {
         loadingContainer.style.backgroundColor = "#28a745";
       }
 
-      // Solo mostrar el enlace si el QR es válido
       if (qrValid) {
-        // Crear el contenedor div que ocupará toda la pantalla
-        const divContainer = document.createElement('div');
-        divContainer.classList.add('full-screen-container'); // Asignar clase CSS
+        console.log("El QR era válido");
 
-        // Verificar que la URL sea absoluta
-        let url = qrData.url;
-        if (!/^https?:\/\//i.test(url)) {
-          url = `https://${url}`;
+        const userAccessRef = db.collection("users").doc(userId).collection("qrs").doc(scannedQR).collection("informacion").doc("usuarios con acceso");
+        const userAccessDoc = await userAccessRef.get();
+
+        // Imprime el documento completo para ver qué contiene
+        console.log("Documento veo : ", userAccessDoc.data()['usuarios permitidos']);
+
+        let isUserAllowed = false;
+
+        if (userAccessDoc.exists) {
+          const allowedUsers = userAccessDoc.data()['usuarios permitidos'];
+
+          console.log("Usuarios permitidos:", allowedUsers);
+          
+          if ((allowedUsers === "" || (allowedUsers && allowedUsers.split(",").map(email => email.trim()).includes(userEmail)))) {
+            isUserAllowed = true;
+            console.log("Correo electrónico encontrado");
+          }
+        } else {
+          console.log("No se encontró el documento de acceso.");
         }
 
-        const linkElement = document.createElement('a');
-        linkElement.href = url;  // Asignar la nueva URL
-        linkElement.target = "_blank";  // Abrir en una nueva pestaña
-        linkElement.innerText = "Ir a la URL";  // Texto del enlace
-        linkElement.classList.add("button-link");  // Asignar clase CSS
+        if (isUserAllowed) {
+          document.getElementById("status").innerText += " - Acceso Permitido";
+          loadingContainer.style.backgroundColor = "#28a745";
 
-        // Añadir el enlace al div contenedor
-        divContainer.appendChild(linkElement);
+          // Crear el contenedor div que ocupará toda la pantalla
+          const divContainer = document.createElement('div');
+          divContainer.classList.add('full-screen-container'); // Asignar clase CSS
 
-        // Mostrar el div en la página
-        document.body.appendChild(divContainer);
+          let url = qrData.url;
+          if (!/^https?:\/\//i.test(url)) {
+            url = `https://${url}`;
+          }
+
+          const linkElement = document.createElement('a');
+          linkElement.href = url;
+          linkElement.target = "_blank";
+          linkElement.innerText = "Ir a la URL";
+          linkElement.classList.add("button-link");
+
+
+
+
+          const informacionRef = db.collection("users")
+    .doc(userId)
+    .collection("qrs")
+    .doc(scannedQR)
+    .collection("informacion");
+
+  const informacionDocs = await informacionRef.get();
+
+  if (!informacionDocs.empty) {
+    const listElement = document.createElement('ul'); // Crear lista para mostrar la información
+    listElement.classList.add('ul');
+    let hasValidInfo = false; // Bandera para verificar si hay información válida
+  
+    informacionDocs.forEach(doc => {
+      const data = doc.data();
+  
+      // Excluir el campo "usuarios permitidos"
+      if (data["usuarios permitidos"]) {
+        return; // Omitir esta entrada
+      }
+  
+      const mensaje = data.mensaje || null;
+      const timestamp = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleString() : null;
+  
+      // Validar que al menos uno de los campos (mensaje o timestamp) exista
+      if (!mensaje && !timestamp) {
+        return; // Omitir entradas sin datos válidos
+      }
+  
+      const listItem = document.createElement('li'); // Crear elemento de lista
+      listItem.classList.add('li');
+
+      listItem.innerText = `${timestamp || "Sin fecha"} - ${mensaje || "Sin mensaje"}`;
+      listElement.appendChild(listItem);
+  
+      hasValidInfo = true; // Indicar que se encontró información válida
+    });
+  
+    if (hasValidInfo) {
+      divContainer.appendChild(listElement); // Agregar lista al contenedor
+    } else {
+      const noInfoMessage = document.createElement('p');
+      noInfoMessage.innerText = "No hay información adicional disponible.";
+      divContainer.appendChild(noInfoMessage);
+    }
+  } else {
+    const noInfoMessage = document.createElement('p');
+    noInfoMessage.innerText = "No hay información adicional disponible.";
+    divContainer.appendChild(noInfoMessage);
+  }
+
+  const linkContainer = document.createElement('div');
+
+  linkContainer.classList.add('full-screen-container');
+  linkContainer.appendChild(linkElement);
+
+          //divContainer.appendChild(linkElement);
+          document.body.appendChild(linkContainer);
+
+          document.body.appendChild(divContainer);
+        } else {
+          document.getElementById("status").innerText += " - Acceso Denegado";
+          loadingContainer.innerHTML = '<span class="icon">✗</span>';
+          loadingContainer.style.backgroundColor = "#dc3545";
+          document.title = "Acceso denegado";
+
+        }
       }
     } else {
-      // Si el QR no se encuentra
       document.title = "QR Inválido";
       document.getElementById("status").innerText = "Estado: QR no encontrado.";
       loadingContainer.innerHTML = '<span class="icon">✗</span>';
@@ -108,8 +190,4 @@ async function validateQR() {
   }
 }
 
-// Llamar a la función de validación
 validateQR();
-
-
-
