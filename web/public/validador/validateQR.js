@@ -37,6 +37,40 @@ async function validateQR() {
     }
 
     if (qrFound) {
+
+
+
+      const vecesEscaneadoRef = db.collection("users")
+  .doc(userId)
+  .collection("qrs")
+  .doc(scannedQR);
+
+const vecesEscaneadoDoc = await vecesEscaneadoRef.get();
+let vecesEscaneado = vecesEscaneadoDoc.exists ? vecesEscaneadoDoc.data().vecesEscaneado : "0"; // Asegúrate de que el valor sea un string
+
+// Si el valor es un string, conviértelo a número
+if (typeof vecesEscaneado === 'string') {
+  vecesEscaneado = parseInt(vecesEscaneado, 10) || 0; // Convertirlo a número o asignar 0 si no es válido
+}
+
+// Actualiza el contador
+await vecesEscaneadoRef.update({
+  vecesEscaneado: (vecesEscaneado + 1).toString() // Asegúrate de almacenar el valor como string
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       if (qrData.fechaExpiracion) {
         const currentDate = new Date();
         const expirationDate = new Date(qrData.fechaExpiracion);
@@ -104,6 +138,39 @@ async function validateQR() {
           linkElement.target = "_blank";
           linkElement.innerText = "Ir a la URL";
           linkElement.classList.add("button-link");
+
+
+
+
+
+          linkElement.addEventListener('click', async () => {
+            try {
+              const vecesIngresadoRef = db.collection("users")
+                .doc(userId)
+                .collection("qrs")
+                .doc(scannedQR);
+                
+          
+              const vecesIngresadoDoc = await vecesIngresadoRef.get();
+              let vecesIngresado = vecesIngresadoDoc.exists ? vecesIngresadoDoc.data().vecesIngresado : "0"; // Asegúrate de que el valor sea un string
+          
+              // Si el valor es un string, conviértelo a número
+              if (typeof vecesIngresado === 'string') {
+                vecesIngresado = parseInt(vecesIngresado, 10) || 0; // Convertirlo a número o asignar 0 si no es válido
+              }
+          
+              // Actualizar el contador
+              await vecesIngresadoRef.update({
+                vecesIngresado: (vecesIngresado + 1).toString() // Asegúrate de almacenar el valor como string
+              });
+          
+              console.log("Contador de vecesIngresado incrementado");
+            } catch (error) {
+              console.error("Error al actualizar el contador de vecesIngresado:", error);
+            }
+          });
+
+
 
 
 
