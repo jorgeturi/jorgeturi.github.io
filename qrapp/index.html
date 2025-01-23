@@ -155,16 +155,17 @@
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>-</span> ¿Se utilizó algún patrón de diseño? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      Se utilizó el patrón <strong>MVVM (Modelo-Vista-ViewModel)</strong>, que separa la interfaz de usuario de la lógica de negocio, facilitando así el mantenimiento y la escalabilidad de la aplicación.
+                      Debido a la simplicidad de la aplicación, no se implementó un patrón de diseño complejo, ya que el objetivo era mantener la estructura liviana y fácil de entender. Sin embargo, se intentó aplicar el patrón <strong>Modelo-Vista-Controlador (MVC)</strong> en ciertas partes del proyecto para separar las responsabilidades y mejorar la organización del código.
                       <br><br>
-                      El patrón MVVM permite que la <strong>Vista</strong> (UI) y el <strong>Modelo</strong> (datos y lógica) estén desacoplados. Esto mejora la organización del código y facilita las pruebas unitarias. En este patrón, el <strong>ViewModel</strong> actúa como intermediario entre la Vista y el Modelo, gestionando la lógica de presentación y proporcionando datos a la Vista sin exponer la lógica de negocio directamente.
+                      En este enfoque, la <strong>Vista</strong> se encarga de la interfaz de usuario, mientras que el <strong>Modelo</strong> maneja los datos y la lógica de negocio. El <strong>Controlador</strong> actúa como intermediario, gestionando la comunicación entre la Vista y el Modelo.
                       <br><br>
-                      <strong>Ventajas:</strong>
+                      Aunque la implementación completa de MVC no fue necesaria debido a la naturaleza sencilla de la app, se utilizó este enfoque en ciertas áreas clave para facilitar el mantenimiento y permitir una escalabilidad futura sin sobrecargar el diseño con complejidades innecesarias.
+                      <br><br>
+                      <strong>Ventajas de este enfoque:</strong>
                       <ul>
-                        <li><strong>Desacoplamiento:</strong> La lógica de presentación está separada de la interfaz de usuario, lo que permite modificar la UI sin afectar la lógica de negocio y viceversa.</li>
-                        <li><strong>Facilidad de mantenimiento:</strong> Los cambios en la lógica de presentación no afectan la interfaz y los cambios en la UI no requieren modificaciones en la lógica del negocio.</li>
-                        <li><strong>Pruebas unitarias:</strong> Gracias a la separación de responsabilidades, es más sencillo realizar pruebas unitarias en el <strong>ViewModel</strong> sin depender de la interfaz de usuario.</li>
-                        <li><strong>Escalabilidad:</strong> Este patrón facilita la escalabilidad de la aplicación, ya que cada parte (Vista, ViewModel, Modelo) puede evolucionar independientemente.</li>
+                        <li><strong>Desacoplamiento:</strong> Separación clara de las responsabilidades, lo que permite modificaciones sin afectar otras partes del sistema.</li>
+                        <li><strong>Mantenimiento simplificado:</strong> Facilita la actualización y el ajuste de cada componente sin necesidad de alterar la lógica global.</li>
+                        <li><strong>Escalabilidad:</strong> La estructura modular permite que la aplicación pueda evolucionar de manera más ordenada si se requiere agregar más funcionalidades.</li>
                       </ul>
                     </p>
                   </div>
@@ -417,33 +418,25 @@
     <div class="carousel-item active">
       <div class="position-relative">
         <h5 class="text-center bg-dark text-light py-2">Diagrama de Flujo General simple</h5>
-        <img src="../assets/img/documentacion/general.png" class="d-block w-100" alt="Diagrama de Flujo General" data-bs-toggle="modal" data-bs-target="#modalDiagrama1">
+        <img src="../assets/img/documentacion/general.png" class="d-block w-100 modal-trigger" alt="Diagrama de Flujo General" data-title="Diagrama de Flujo General">
       </div>
     </div>
     <!-- Diagrama 2 -->
     <div class="carousel-item">
       <div class="position-relative">
         <h5 class="text-center bg-dark text-light py-2">Diagrama de Flujo opciones: cuenta y listado</h5>
-        <img src="../assets/img/documentacion/particular1.png" class="d-block w-100" alt="Diagrama de Flujo Particular" data-bs-toggle="modal" data-bs-target="#modalDiagrama2">
+        <img src="../assets/img/documentacion/particular1.png" class="d-block w-100 modal-trigger" alt="Diagrama de Flujo Particular" data-title="Diagrama de Flujo opciones: cuenta y listado">
       </div>
     </div>
     <!-- Diagrama 3 -->
     <div class="carousel-item">
       <div class="position-relative">
         <h5 class="text-center bg-dark text-light py-2">Diagrama de Flujo opciones: escanear y generar</h5>
-        <img src="../assets/img/documentacion/particular2.png" class="d-block w-100" alt="Diagrama de Dependencias" data-bs-toggle="modal" data-bs-target="#modalDiagrama3">
+        <img src="../assets/img/documentacion/particular2.png" class="d-block w-100 modal-trigger" alt="Diagrama de Dependencias" data-title="Diagrama de Flujo opciones: escanear y generar">
       </div>
     </div>
   </div>
 
-  <!-- Diagrama 4 -->
-  <div class="carousel-item">
-    <div class="position-relative">
-      <h5 class="text-center bg-dark text-light py-2">Diagrama de Clases: general</h5>
-      <img src="../assets/img/documentacion/clases_general.png" class="d-block w-100" alt="Diagrama de clases" data-bs-toggle="modal" data-bs-target="#modalDiagrama3">
-    </div>
-  </div>
-</div>
   <!-- Controles del Carrusel -->
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselDiagramas" data-bs-slide="prev">
     <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
@@ -455,46 +448,71 @@
   </button>
 </div>
 
-<!-- Modales para ampliar imágenes -->
-<div class="modal fade" id="modalDiagrama1" tabindex="-1" aria-hidden="true">
+
+<div class="section-title">
+  <h2>Diagrama de clases</h2>
+  <p>Clickea en la imagen para expandirla</p>
+</div>
+<!-- Galería de imágenes con texto superpuesto -->
+<div class="container my-5">
+  <div class="row g-3">
+    <!-- Imagen 1 con texto superpuesto -->
+    <div class="col-6 col-md-4 col-lg-3 position-relative">
+      <div class="overlay-container">
+        <img src="../assets/img/documentacion/clases_general.png" alt="Diagrama de clase general" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase general">
+        <div class="overlay-text">Diagrama de clase general</div>
+      </div>
+    </div>
+    <!-- Imagen 2 con texto superpuesto -->
+    <div class="col-6 col-md-4 col-lg-3 position-relative">
+      <div class="overlay-container">
+        <img src="../assets/img/documentacion/clases.png" alt="Diagrama de clase" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase">
+        <div class="overlay-text">Diagrama de clase</div>
+      </div>
+    </div>
+
+    <!-- Imagen 2 con texto superpuesto -->
+    <div class="col-6 col-md-4 col-lg-3 position-relative">
+      <div class="overlay-container">
+        <img src="../assets/img/documentacion/clases.png" alt="Diagrama de clase" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase">
+        <div class="overlay-text">Diagrama de clase</div>
+      </div>
+    </div>
+
+    <!-- Imagen 2 con texto superpuesto -->
+    <div class="col-6 col-md-4 col-lg-3 position-relative">
+      <div class="overlay-container">
+        <img src="../assets/img/documentacion/clases.png" alt="Diagrama de clase" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase">
+        <div class="overlay-text">Diagrama de clase</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Reutilizable -->
+<div class="modal fade" id="sharedImageModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <div class="modal-body">
-        <img src="../assets/img/documentacion/general.png" class="img-fluid" alt="Diagrama de Flujo General">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalImageTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalImage" src="" class="img-fluid" alt="">
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="modalDiagrama2" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img src="../assets/img/documentacion/particular1.png" class="img-fluid" alt="Diagrama de Flujo Particular">
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade" id="modalDiagrama3" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img src="../assets/img/documentacion/particular2.png" class="img-fluid" alt="Diagrama de Dependencias">
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade" id="modalDiagrama4" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img src="../assets/img/documentacion/clases_general.png" class="img-fluid" alt="Diagrama de Clases">
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
 
 <!-- Bootstrap CSS and JS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -571,6 +589,11 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Facultad de Ingeniería</h4>
+            <p>Mar del Plata, Buenos Aires, Argentina</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#caracteristicas">Características</a></li>
@@ -590,13 +613,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Seguinos</h4>
-            <p>En las redes sociales</p>
-            <div class="social-links mt-3">
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            </div>
-          </div>
+          
 
         </div>
       </div>
@@ -683,6 +700,30 @@ document.addEventListener('click', function(event) {
     mobileNavToggle.classList.remove('bi-x');
     mobileNavToggle.classList.add('bi-list');
   }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = new bootstrap.Modal(document.getElementById('sharedImageModal'));
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalImageTitle');
+
+  // Agregar evento a todas las imágenes con la clase 'modal-trigger'
+  document.querySelectorAll('.modal-trigger').forEach(img => {
+    img.addEventListener('click', () => {
+      // Obtener la URL y el título de la imagen
+      const imgSrc = img.getAttribute('src');
+      const imgTitle = img.getAttribute('data-title') || 'Imagen';
+
+      // Actualizar contenido del modal
+      modalImage.setAttribute('src', imgSrc);
+      modalTitle.textContent = imgTitle;
+
+      // Mostrar el modal
+      modal.show();
+    });
+  });
 });
 
     </script>
@@ -849,6 +890,54 @@ document.addEventListener('click', function(event) {
 /* Efecto hover */
 .close-btn:hover {
   background-color: #35a2c2;  /* Fondo más oscuro al pasar el ratón */
+}
+
+
+
+
+/* FOTOS DEL FINAL */
+.overlay-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+* Contenedor de la imagen con texto superpuesto */
+.position-relative {
+  position: relative;
+  height: 250px; /* Ajusta según tus necesidades */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+}
+
+/* Imagen dentro del contenedor */
+.img-fluid {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover; /* Escala la imagen sin distorsionar */
+}
+
+/* Texto superpuesto */
+.overlay-text {
+  position: absolute;
+  top: 5%; /* Alineado a la parte superior */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
 }
 </style>
 </html>
