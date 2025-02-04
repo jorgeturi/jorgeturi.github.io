@@ -470,21 +470,21 @@
   <div class="carousel-inner">
     <!-- Diagrama 1 -->
     <div class="carousel-item active">
-      <div class="position-relative">
+      <div class="position-relative1">
         <h5 class="text-center bg-dark text-light py-2">Diagrama de Flujo General simple</h5>
         <img src="../assets/img/documentacion/general.png" class="d-block w-100 modal-trigger" alt="Diagrama de Flujo General" data-title="Diagrama de Flujo General">
       </div>
     </div>
     <!-- Diagrama 2 -->
     <div class="carousel-item">
-      <div class="position-relative">
+      <div class="position-relative1">
         <h5 class="text-center bg-dark text-light py-2">Diagrama de Flujo opciones: cuenta y listado</h5>
         <img src="../assets/img/documentacion/particular1.png" class="d-block w-100 modal-trigger" alt="Diagrama de Flujo Particular" data-title="Diagrama de Flujo opciones: cuenta y listado">
       </div>
     </div>
     <!-- Diagrama 3 -->
     <div class="carousel-item">
-      <div class="position-relative">
+      <div class="position-relative1">
         <h5 class="text-center bg-dark text-light py-2">Diagrama de Flujo opciones: escanear y generar</h5>
         <img src="../assets/img/documentacion/particular2.png" class="d-block w-100 modal-trigger" alt="Diagrama de Dependencias" data-title="Diagrama de Flujo opciones: escanear y generar">
       </div>
@@ -718,6 +718,7 @@
   <script src="../assets/js/main.js"></script>
 
   <script>
+    
     document.oncontextmenu = function(){return false}
 
     window.onload = function()
@@ -982,6 +983,21 @@ document.addEventListener('DOMContentLoaded', () => {
   overflow: hidden; /* Oculta cualquier contenido que sobresalga */
 }
 
+
+
+.position-relative1 {
+  height: 500px; /* Ajusta según tus necesidades */
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.position-relative1 .img-fluid {
+  width: 100%;             /* La imagen debe ocupar el 100% del ancho del contenedor */
+  height: 100%;            /* La imagen debe ocupar el 100% de la altura del contenedor */
+  object-fit: cover; 
+}
+
 /* Imagen dentro del contenedor */
 .img-fluid {
   max-height: 100%;
@@ -1010,20 +1026,15 @@ document.addEventListener('DOMContentLoaded', () => {
   color: white;
 }
 
+
 #carouselDiagramas .carousel-item img {
-  max-height: 350px; /* Ajusta la altura máxima según tu preferencia */
+  max-height: 450px; /* Ajusta la altura máxima según tu preferencia */
   width: auto; /* Mantiene la proporción */
   object-fit: contain; /* Evita que la imagen se deforme */
-}
+   display: block;  
+ }
 
 
 
-@media (max-width: 767px) {
-    .overlay-container img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover; /* Para que la imagen no se deforme */
-    }
-  }
 </style>
 </html>
