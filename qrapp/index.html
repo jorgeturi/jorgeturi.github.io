@@ -169,6 +169,8 @@
                               - <code>StatefulWidget</code> proporciona la capacidad de gestionar el estado de un widget de manera dinámica. Esto permite que los widgets actualicen su apariencia cuando cambian los datos que los afectan. Por ejemplo, en <code>GenerateQRPage</code>, mostrando o no un campo adicional para el tiempo de expiración si el QR es dinámico.
                               <br><br>
                               - <code>StatelessWidget</code> es útil cuando el estado del widget no cambia después de su creación. Un ejemplo podría ser un componente visual estático, como un logo, que no requiere actualizarse una vez que se ha cargado.
+                              <br><br>
+                              Dart no permite la herencia múltiple, pero se pueden usar mixins para compartir comportamientos entre clases sin la complejidad de la herencia múltiple
                             </div>
                           </div>
                         </div>
@@ -971,7 +973,6 @@ document.addEventListener('DOMContentLoaded', () => {
   height: auto;
 }
 
-* Contenedor de la imagen con texto superpuesto */
 .position-relative {
   position: relative;
   height: 250px; /* Ajusta según tus necesidades */
@@ -1014,5 +1015,15 @@ document.addEventListener('DOMContentLoaded', () => {
   width: auto; /* Mantiene la proporción */
   object-fit: contain; /* Evita que la imagen se deforme */
 }
+
+
+
+@media (max-width: 767px) {
+    .overlay-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover; /* Para que la imagen no se deforme */
+    }
+  }
 </style>
 </html>
