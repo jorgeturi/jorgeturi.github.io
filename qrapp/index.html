@@ -107,7 +107,7 @@
             <div class="accordion-list">
               <ul>
                 <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>-</span> ¿Qué realiza la app? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span></span> ¿Qué realiza la app? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
                       La aplicación permite escanear y crear códigos QR, los cuales pueden persistir tanto de forma local en el dispositivo como en la nube mediante Firebase.
@@ -121,38 +121,86 @@
                 </li>
 
                 <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>-</span> ¿En que parte se usaron los conceptos de POO? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span></span> ¿En qué parte se usaron los conceptos de POO? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      <strong>Clases y Objetos:</strong><br>
-                      Cada archivo o componente como <code>AuthService</code>, <code>GenerateQRPage</code>, <code>LogPage</code>, <code>QRestatico</code>, <code>QRdinamico</code>, etc., se considera una clase con comportamientos y propiedades relacionadas. Por ejemplo, <code>AuthService</code> gestiona la autenticación con Firebase, y <code>GenerateQRPage</code> o <code>QRestatico</code> se encargan de la creación de los QRs.
+                      <div class="accordion" id="pooConceptsAccordion">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingClaseObjeto">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClaseObjeto" aria-expanded="true" aria-controls="collapseClaseObjeto">
+                              <strong>Clases y Objetos:</strong>
+                            </button>
+                          </h2>
+                          <div id="collapseClaseObjeto" class="accordion-collapse collapse" aria-labelledby="headingClaseObjeto" data-bs-parent="#pooConceptsAccordion">
+                            <div class="accordion-body">
+                              Cada archivo contiene alguna clase como <code>AuthService</code>, <code>GenerateQRPage</code>, <code>LogPage</code>, <code>QRestatico</code>, <code>QRdinamico</code>, etc. Por ejemplo, <code>QRManager</code> gestiona los QRs que fueron instanciados como <code>Estaticos</code> o <code>Dinamicos</code> según elección del usuario.
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingEncapsulamiento">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEncapsulamiento" aria-expanded="true" aria-controls="collapseEncapsulamiento">
+                              <strong>Encapsulamiento:</strong>
+                            </button>
+                          </h2>
+                          <div id="collapseEncapsulamiento" class="accordion-collapse collapse" aria-labelledby="headingEncapsulamiento" data-bs-parent="#pooConceptsAccordion">
+                            <div class="accordion-body">
+                              Las variables y métodos privados, como los controladores <code>TextEditingController</code>, están encapsulados dentro de las clases y no se pueden acceder directamente desde fuera. Esto asegura la integridad de los datos y simplifica la interacción. (Por ejemplo, acceder y manipular el texto que el usuario ingresa en una pantalla no se desea que sea visto por cualquier pantalla)
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingHerencia">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHerencia" aria-expanded="true" aria-controls="collapseHerencia">
+                              <strong>Herencia:</strong>
+                            </button>
+                          </h2>
+                          <div id="collapseHerencia" class="accordion-collapse collapse" aria-labelledby="headingHerencia" data-bs-parent="#pooConceptsAccordion">
+                            <div class="accordion-body">
+                              En Flutter, se utiliza herencia para extender clases como <code>StatefulWidget</code> y <code>StatelessWidget</code>. Las clases <code>GenerateQRPage</code> y <code>LogPage</code> extienden de estas clases base para personalizar comportamientos mientras aprovechan las funcionalidades predeterminadas.
+                              <br>
+                              <strong>Ejemplo de funcionalidades predeterminadas:</strong><br>
+                              - <code>StatefulWidget</code> proporciona la capacidad de gestionar el estado de un widget de manera dinámica. Esto permite que los widgets actualicen su apariencia cuando cambian los datos que los afectan. Por ejemplo, en <code>GenerateQRPage</code>, mostrando o no un campo adicional para el tiempo de expiración si el QR es dinámico.
+                              <br><br>
+                              - <code>StatelessWidget</code> es útil cuando el estado del widget no cambia después de su creación. Un ejemplo podría ser un componente visual estático, como un logo, que no requiere actualizarse una vez que se ha cargado.
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingPolimorfismo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePolimorfismo" aria-expanded="true" aria-controls="collapsePolimorfismo">
+                              <strong>Polimorfismo:</strong>
+                            </button>
+                          </h2>
+                          <div id="collapsePolimorfismo" class="accordion-collapse collapse" aria-labelledby="headingPolimorfismo" data-bs-parent="#pooConceptsAccordion">
+                            <div class="accordion-body">
+                              El polimorfismo se ve en los widgets de Flutter que implementan el método <code>build()</code>. Aunque cada widget (como <code>Stateful</code> o <code>Stateless</code>) tiene su propia versión del método, todos comparten la misma firma. En Dart no es posible sobrecargar funciones según el tipo de parámetros, pero es posible usar parámetros opcionales para corroborar en la función o el tipo <code>dynamic</code>.
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingAbstraccion">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbstraccion" aria-expanded="true" aria-controls="collapseAbstraccion">
+                              <strong>Abstracción:</strong>
+                            </button>
+                          </h2>
+                          <div id="collapseAbstraccion" class="accordion-collapse collapse" aria-labelledby="headingAbstraccion" data-bs-parent="#pooConceptsAccordion">
+                            <div class="accordion-body">
+                              Las clases como <code>AuthService</code> y <code>QRStorage</code> proporcionan una abstracción de procesos complejos. Por ejemplo, <code>AuthService</code> maneja la autenticación con Firebase sin exponer la complejidad de sus operaciones internas al resto de la aplicación.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </p>
-                    <p>
-                      <strong>Encapsulamiento:</strong><br>
-                      Las variables y métodos privados, como los controladores <code>TextEditingController</code>, están encapsulados dentro de las clases y no se pueden acceder directamente desde fuera. Esto asegura la integridad de los datos y simplifica la interacción.
-                    </p>
-                    <p>
-                      <strong>Herencia:</strong><br>
-                      En Flutter, se utiliza herencia para extender clases como <code>StatefulWidget</code> y <code>StatelessWidget</code>. Las clases <code>GenerateQRPage</code> y <code>LogPage</code> extienden de estas clases base para personalizar comportamientos mientras aprovechan las funcionalidades predeterminadas.
-                      
-                      <strong>Ejemplo de funcionalidades predeterminadas:</strong><br>
-                      - **StatefulWidget** proporciona la capacidad de gestionar el estado de un widget de manera dinámica. Esto permite que los widgets actualicen su apariencia cuando cambian los datos que los afectan. Por ejemplo, en <code>GenerateQRPage</code>, se puede actualizar el QR cada vez que cambian los datos de entrada.
-                      - **StatelessWidget** es útil cuando el estado del widget no cambia después de su creación. Un ejemplo podría ser un componente visual estático, como un logo, que no requiere actualizarse una vez que se ha cargado. El uso de <code>StatelessWidget</code> en lugar de <code>StatefulWidget</code> permite que la aplicación sea más eficiente cuando no es necesario manejar estados dinámicos.
-                    </p>
-                    <p>
-                      <strong>Polimorfismo:</strong><br>
-                      El polimorfismo se ve en los widgets de Flutter que implementan el método <code>build()</code>. Aunque cada widget (como <code>Stateful</code> o <code>Stateless</code>) tiene su propia versión del método, todos comparten la misma firma, lo que permite comportamientos similares con implementaciones distintas.
-                    </p>
-                    <p>
-                      <strong>Abstracción:</strong><br>
-                      Las clases como <code>AuthService</code> y <code>QRStorage</code> proporcionan una abstracción de procesos complejos. Por ejemplo, <code>AuthService</code> maneja la autenticación con Firebase sin exponer la complejidad de sus operaciones internas al resto de la aplicación.
-                    </p>
-                  
                   </div>
                 </li>
 
                 <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>-</span> ¿Se utilizó algún patrón de diseño? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span></span> ¿Se utilizó algún patrón de diseño? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                     <p>
                       Debido a la simplicidad de la aplicación, no se implementó un patrón de diseño complejo, ya que el objetivo era mantener la estructura liviana y fácil de entender. Sin embargo, se intentó aplicar el patrón <strong>Modelo-Vista-Controlador (MVC)</strong> en ciertas partes del proyecto para separar las responsabilidades y mejorar la organización del código.
@@ -459,31 +507,43 @@
     <!-- Imagen 1 con texto superpuesto -->
     <div class="col-6 col-md-4 col-lg-3 position-relative">
       <div class="overlay-container">
-        <img src="../assets/img/documentacion/clases_general.png" alt="Diagrama de clase general" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase general">
+        <img src="../assets/img/documentacion/clases_general.png" alt="Diagrama de clase general" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase general" style="min-width:  200px; min-height: 200px;">
         <div class="overlay-text">Diagrama de clase general</div>
+        <div class="d-flex justify-content-center">  <!-- Centrado con flexbox -->
+        <a href="../assets/img/documentacion/clases_general.png" download class="btn btn-black mt-2" target="_blank">Descargar</a>
+        </div>
       </div>
     </div>
     <!-- Imagen 2 con texto superpuesto -->
     <div class="col-6 col-md-4 col-lg-3 position-relative">
       <div class="overlay-container">
-        <img src="../assets/img/documentacion/clases.png" alt="Diagrama de clase" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase">
+        <img src="../assets/img/documentacion/clases.png" alt="Diagrama de clase" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de clase" style="min-width: 200px; min-height: 200px;  max-width: 200px; max-height: 200px; ">
         <div class="overlay-text">Diagrama de clase</div>
+        <div class="d-flex justify-content-center">  <!-- Centrado con flexbox -->
+        <a href="../assets/img/documentacion/clases.png" download class="btn btn-black mt-2" target="_blank">Descargar</a>
+        </div>
       </div>
     </div>
 
     <!-- Imagen 2 con texto superpuesto -->
     <div class="col-6 col-md-4 col-lg-3 position-relative">
       <div class="overlay-container">
-        <img src="../assets/img/documentacion/base_datos.png" alt="Diagrama de base de datos" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de base de datos">
+        <img src="../assets/img/documentacion/base_datos.png" alt="Diagrama de base de datos" class="img-fluid img-thumbnail modal-trigger" data-title="Diagrama de base de datos" style="min-width: 200px; min-height: 200px;">
         <div class="overlay-text">Diagrama base de datos</div>
+        <div class="d-flex justify-content-center">  <!-- Centrado con flexbox -->
+        <a href="../assets/img/documentacion/base_datos.png" download class="btn btn-black mt-2" target="_blank">Descargar</a>
+        </div>
       </div>
     </div>
 
     <!-- Imagen 2 con texto superpuesto -->
     <div class="col-6 col-md-4 col-lg-3 position-relative">
       <div class="overlay-container">
-        <img src="../assets/img/documentacion/base_datos_ejemplo.png" alt="ejemplo base de datos" class="img-fluid img-thumbnail modal-trigger" data-title="Ejemplo base de datos">
+        <img src="../assets/img/documentacion/base_datos_ejemplo.png" alt="ejemplo base de datos" class="img-fluid img-thumbnail modal-trigger" data-title="Ejemplo base de datos" style="min-width:  200px; min-height: 200px;">
         <div class="overlay-text">Ejemplo base de datos</div>
+        <div class="d-flex justify-content-center">  <!-- Centrado con flexbox -->
+          <a href="../assets/img/documentacion/base_datos_ejemplo.png" download class="btn btn-black mt-2" target="_blank">Descargar</a>
+        </div>
       </div>
     </div>
 
@@ -938,6 +998,17 @@ document.addEventListener('DOMContentLoaded', () => {
   text-align: center;
   pointer-events: none;
   z-index: 10;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+}
+
+#carouselDiagramas .carousel-item img {
+  max-height: 350px; /* Ajusta la altura máxima según tu preferencia */
+  width: auto; /* Mantiene la proporción */
+  object-fit: contain; /* Evita que la imagen se deforme */
 }
 </style>
 </html>
