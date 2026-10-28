@@ -1,9 +1,7 @@
 1:"$Sreact.fragment"
-2:I[21194,["/_next/static/chunks/5cd89f36845247b4.js"],"ClientPageRoot"]
-3:I[71055,["/_next/static/chunks/6f14fd1f08af1659.js","/_next/static/chunks/cf7216a16dcb70e0.js","/_next/static/chunks/23ae53bb0c8809ca.js","/_next/static/chunks/fc0a0b2e487d694b.js"],"default"]
-6:I[61172,["/_next/static/chunks/5cd89f36845247b4.js"],"OutletBoundary"]
-7:"$Sreact.suspense"
-0:{"buildId":"SgnIaHBvfeueM3t_0-wLZ","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/23ae53bb0c8809ca.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/fc0a0b2e487d694b.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
-4:{}
-5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
-8:null
+2:I[61583,["/_next/static/chunks/96cbd319300b718c.js","/_next/static/chunks/05c9f6bb8282b7ad.js","/_next/static/chunks/ff1cbc6e7b165929.js","/_next/static/chunks/30a6657723795d21.js"],"default"]
+3:I[61172,["/_next/static/chunks/5cd89f36845247b4.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+:HL["/_next/static/chunks/6af9b6281ac94f09.css","style"]
+0:{"buildId":"N3DNBpVvXwvIVYMJ_v2yt","rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://tujo.com.ar/presupuesto-web#webpage\",\"url\":\"https://tujo.com.ar/presupuesto-web\",\"name\":\"Presupuesto web a medida | TuJo\",\"description\":\"Pedí tu presupuesto web: contanos qué necesitás y te respondemos con una propuesta clara, con alcance y presupuesto cerrados. Sin compromiso.\",\"inLanguage\":\"es-AR\",\"isPartOf\":{\"@id\":\"https://tujo.com.ar/#organization\"}},{\"@type\":\"ContactPoint\",\"contactType\":\"sales\",\"email\":\"presupuestos@tujo.com.ar\",\"availableLanguage\":[\"Spanish\",\"English\"]}]}"}}],["$","$L2",null,{}]],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/6af9b6281ac94f09.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/ff1cbc6e7b165929.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/30a6657723795d21.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
